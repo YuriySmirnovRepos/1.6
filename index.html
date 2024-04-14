@@ -1,11 +1,273 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CPS. Single-page website project</title>
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="normalize.css" rel="stylesheet">
+        <!-- ** SWIPER -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <!-- ********** -->
+        <link rel="stylesheet" href="style.css">
+        <title>Фирма CPS</title>
+    </head>
+    <body class="body">
+
+        <aside class="aside-menu hidden">
+
+            <!-- ! В aside не может быть header. Заменить вложенный header на div или  -->
+            <header class="aside-header">
+                <ul class="aside-header__actions">
+                    <li class="aside-header__item">
+                        <button class="aside-header__action btn-close"></button>
+                    </li>
+                    <li class="aside-header__item">
+                        <a href="" class="aside-header__action lnk-logo"></a>
+                    </li>
+                    <li class="aside-header__item">
+                        <button class="aside-header__action btn-search"></button>
+                    </li>
+                </ul>
+            </header>
+
+            <ul class="aside__nav nav-list">
+                <li class="nav-list__item">
+                    <a class="nav-list__link" href="">Ремонт техники</a>
+                </li>
+                <li class="nav-list__item">
+                    <a class="nav-list__link" href="">Услуги и сервисы</a>
+                </li>
+                <li class="nav-list__item">
+                    <a class="nav-list__link" href="">Корпоративным клиентам</a>
+                </li>
+                <li class="nav-list__item">
+                    <a class="nav-list__link" href="">Продавцам техники</a>
+                </li>
+                <li class="nav-list__item">
+                    <a class="nav-list__link" href="">Партнерам</a>
+                </li>
+                <li class="nav-list__item">
+                    <a class="nav-list__link" href="">Производителям</a>
+                </li>
+                <li class="nav-list__item">
+                    <a class="nav-list__link" href="">Наши сервисные центры</a>
+                </li>
+                <li class="nav-list__item">
+                    <a class="nav-list__link" href="">Контакты</a>
+                </li>
+            </ul>
+
+            <footer class="aside-footer">
+                <ul class="aside-footer__actions">
+                <li class="aside-footer__item">
+                    <a href="" class="aside-footer__action btn-call"></a>
+                </li>
+                <li class="aside-footer__item">
+                    <a href="" class="aside-footer__action btn-chat"></a>
+                </li>
+                <li class="aside-footer__item">
+                    <a href="" class="aside-footer__action lnk-profile"></a>
+                </li>
+                </ul>
+                <p class="aside-footer__email">mail@cps.com</p>
+                <a href="phone:8-800-890-8900" class="aside-footer__phone">8 800 890 8900</a>
+                <ul class="aside-footer__langs">
+                <li class="aside-footer__lang-item">
+                    <p class="aside-footer__lang">RU</p>
+                </li>
+                <li class="aside-footer__lang-item">
+                    <p class="aside-footer__lang">EN</p>
+                </li>
+                <li class="aside-footer__lang-item">
+                    <p class="aside-footer__lang">CH</p>
+                </li>
+                </ul>
+            </footer>
+
+        </aside>
+
+        <div class="container">
+            <header class="header">
+                <ul class="header__actions">
+                    <li class="header__item">
+                        <button class="header__action header__action--burger"></button>
+                    </li>
+                    <li class="header__item">
+                        <a class="header__action header__action--logo" href=""></a>
+                    </li>
+                    <li class="header__item hidden">
+                        <button class="header__action header__action--call"></button>
+                    </li>
+                    <li class="header__item hidden">
+                        <button class="header__action header__action--chat"></button>
+                    </li>
+                    <li class="header__item hidden">
+                        <button class="header__action header__action--profile"></button>
+                    </li>
+                    <li class="header__item">
+                        <button class="header__action header__action--repair"></button>
+                    </li>
+                    <li class="header__item">
+                        <button class="header__action header__action--checkstatus"></button>
+                    </li>
+                </ul>
+            </header>
+            
+            <main class="main">
+
+                <section class="hero">
+
+                    <div class="hero__container">
+                        <h1 class="hero__title">Услуги и сервисы</h1>
+                        <ul class="hero__actions hidden">
+                            <li class="hero__item">
+                                <button class="hero__action hero__action--repair">Оставить заявку</button>
+                            </li>
+                            <li class="hero__item">
+                                <button class="hero__action hero__action--check">Статус ремонта</button>
+                            </li>
+                        </ul>
+                    </div>
+        
+                    <nav class="hero__nav slide-menu">
+                        <ul class="slide-menu__items">
+                            <li class="slide-menu__item">
+                                <a href="" class="slide-menu__link">Ремонтируемые устройства</a>
+                            </li>
+                            <li class="slide-menu__item">
+                                <a href="" class="slide-menu__link">Ремонтируемые бренды</a>
+                            </li>
+                            <li class="slide-menu__item">
+                                <a href="" class="slide-menu__link">Дополнительные услуги</a>
+                            </li>
+                            <li class="slide-menu__item">
+                                <a href="" class="slide-menu__link">Цены на услуги</a>
+                            </li>
+                            <li class="slide-menu__item">
+                                <a href="" class="slide-menu__link">Адреса сервисных магазинов</a>
+                            </li>
+                            <li class="slide-menu__item">
+                                <a href="" class="slide-menu__link">Специальные цены</a>
+                            </li>
+                            <li class="slide-menu__item">
+                                <a href="" class="slide-menu__link">Отзывы</a>
+                            </li>
+                        </ul>
+                    </nav>
+        
+                    <div class="hero__about-container">
+                        <p class="hero__about">
+                            <span class="hero__first-part">
+                                Мы являемся авторизованным сервисным центром по 
+                                ремонту техники Dell. Только у нас вы можете отремонтировать 
+                                свой ноутбук Dell с официальной гарантией производителя.
+                            </span>
+                            <span class="hero__768-txt-part hidden">
+                                <br>
+                                <br>
+                                Мы успешно работаем с 1992 года и заслужили репутацию надежного партнера</span><span class="hero__1120-txt-part hidden">, что подтверждает большое количество постоянных клиентов. Мы гордимся тем, что к нам обращаются по рекомендациям и, в свою очередь, 
+                                советуют нас родным и близким.
+                            </span>
+                            <button class="hero__read-more">Читать далее</button>
+                        </p>
+                        <img class="hero__pic" src="img/hero/logoPicture.png" alt="CPS logo photo"
+                        srcset="
+                            img/hero/logo_pic_320px.png 320w,
+                            img/hero/logo_pic_768px.png 360w,
+                            img/hero/logo_pic_1120px.png 532w
+                        "
+                        sizes="(max-width: 320px) 280px,
+                                (min-width:321px) and (max-width: 768px) 340px,
+                                (min-width:769px) 500px">
+                    </div>
     
-</body>
+                </section>
+
+                <section class="brands">
+                    <h2 class="brands__title">Ремонт техники различных брендов</h2>
+        
+                    <div class="brands__container">
+                        <div class="brands__my-swiper swiper">
+                            <ul class="swiper-wrapper">
+                                <li class="swiper-slide">
+                                    <a class="swiper-slide__link" href="">
+                                        <img class="swiper-slide__logo" src="img/brands/lenovo-logo.png" alt="">
+                                        <img class="swiper-slide__go" src="img/brands/go.png" alt="">
+                                    </a>
+                                </li>
+                                <li class="swiper-slide">
+                                    <a class="swiper-slide__link" href="">
+                                        <img class="swiper-slide__logo" src="img/brands/samsung-logo.png" alt="">
+                                        <img class="swiper-slide__go" src="img/brands/go.png" alt="">
+                                    </a>
+                                </li>
+                                <li class="swiper-slide">
+                                    <a class="swiper-slide__link" href="">
+                                        <img class="swiper-slide__logo" src="img/brands/apple-logo.png" alt="">
+                                        <img class="swiper-slide__go" src="img/brands/go.png" alt="">
+                                    </a>
+                                </li>
+                                <li class="swiper-slide hidden-768px">
+                                    <a class="swiper-slide__link" href="">
+                                        <img class="swiper-slide__logo" src="img/brands/ViewSonic-logo.png" alt="">
+                                        <img class="swiper-slide__go" src="img/brands/go.png" alt="">
+                                    </a>
+                                </li>
+                                <li class="swiper-slide">
+                                    <a class="swiper-slide__link" href="">
+                                        <img class="swiper-slide__logo" src="img/brands/bosch-logo.png" alt="">
+                                        <img class="swiper-slide__go" src="img/brands/go.png" alt="">
+                                    </a>
+                                </li>
+                                <li class="swiper-slide">
+                                    <a class="swiper-slide__link" href="">
+                                        <img class="swiper-slide__logo" src="img/brands/hp-logo.png" alt="">
+                                        <img class="swiper-slide__go" src="img/brands/go.png" alt="">
+                                    </a>
+                                </li>
+                                <li class="swiper-slide">
+                                    <a class="swiper-slide__link" href="">
+                                        <img class="swiper-slide__logo" src="img/brands/acer-logo.png" alt="">
+                                        <img class="swiper-slide__go" src="img/brands/go.png" alt="">
+                                    </a>
+                                </li>
+                                <li class="swiper-slide hidden-768px">
+                                    <a class="swiper-slide__link" href="">
+                                        <img class="swiper-slide__logo" src="img/brands/sony-logo.png" alt="">
+                                        <img class="swiper-slide__go" src="img/brands/go.png" alt="">
+                                    </a>
+                                </li>
+                                <li class="swiper-slide hidden-1120px">
+                                    <a class="swiper-slide__link" href="">
+                                        <img class="swiper-slide__logo" src="img/brands/lenovo-logo.png" alt="">
+                                        <img class="swiper-slide__go" src="img/brands/go.png" alt="">
+                                    </a>
+                                </li>
+                                <li class="swiper-slide hidden-1120px">
+                                    <a class="swiper-slide__link" href="">
+                                        <img class="swiper-slide__logo" src="img/brands/samsung-logo.png" alt="">
+                                        <img class="swiper-slide__go" src="img/brands/go.png" alt="">
+                                    </a>
+                                </li>
+                                <li class="swiper-slide hidden-1120px">
+                                    <a class="swiper-slide__link" href="">
+                                        <img class="swiper-slide__logo" src="img/brands/apple-logo.png" alt="">
+                                        <img class="swiper-slide__go" src="img/brands/go.png" alt="">
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="swiper-pagination"></div>
+                        </div>
+            
+                        <button class="brands__show-more hidden-320px">Показать все</button>
+                    </div>
+                </section>
+        
+
+            </main>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
 </html>
