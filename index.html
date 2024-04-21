@@ -5,31 +5,33 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="normalize.css" rel="stylesheet">
+
         <!-- ** SWIPER -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
         <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
         <!-- ********** -->
+
+        <script src="script.js" defer></script>
         <link rel="stylesheet" href="style.css">
         <title>Фирма CPS</title>
     </head>
     <body class="body">
 
-        <aside class="aside-menu hidden">
+        <aside class="modal modal--burger aside-menu hidden">
 
-            <!-- ! В aside не может быть header. Заменить вложенный header на div или  -->
-            <header class="aside-header">
+            <div class="aside-header">
                 <ul class="aside-header__actions">
                     <li class="aside-header__item">
-                        <button class="aside-header__action btn-close"></button>
+                        <button class="round-button round-button--close round-button--transition-scale"></button>
                     </li>
                     <li class="aside-header__item">
                         <a href="" class="aside-header__action lnk-logo"></a>
                     </li>
                     <li class="aside-header__item">
-                        <button class="aside-header__action btn-search"></button>
+                        <button class="round-button round-button--search round-button--transition-scale"></button>
                     </li>
                 </ul>
-            </header>
+            </div>
 
             <ul class="aside__nav nav-list">
                 <li class="nav-list__item">
@@ -58,58 +60,92 @@
                 </li>
             </ul>
 
-            <footer class="aside-footer">
+            <div class="aside-footer">
                 <ul class="aside-footer__actions">
-                <li class="aside-footer__item">
-                    <a href="" class="aside-footer__action btn-call"></a>
-                </li>
-                <li class="aside-footer__item">
-                    <a href="" class="aside-footer__action btn-chat"></a>
-                </li>
-                <li class="aside-footer__item">
-                    <a href="" class="aside-footer__action lnk-profile"></a>
-                </li>
+                    <li class="aside-footer__item">
+                        <a href="" class="round-button round-button--call round-button--transition-scale"></a>
+                    </li>
+                    <li class="aside-footer__item">
+                        <a href="" class="round-button round-button--chat round-button--transition-scale"></a>
+                    </li>
+                    <li class="aside-footer__item">
+                        <a href="" class="round-button round-button--profile round-button--transition-scale"></a>
+                    </li>
                 </ul>
+
                 <p class="aside-footer__email">mail@cps.com</p>
                 <a href="phone:8-800-890-8900" class="aside-footer__phone">8 800 890 8900</a>
                 <ul class="aside-footer__langs">
-                <li class="aside-footer__lang-item">
-                    <p class="aside-footer__lang">RU</p>
-                </li>
-                <li class="aside-footer__lang-item">
-                    <p class="aside-footer__lang">EN</p>
-                </li>
-                <li class="aside-footer__lang-item">
-                    <p class="aside-footer__lang">CH</p>
-                </li>
+                    <li class="aside-footer__lang-item">
+                        <p class="aside-footer__lang">RU</p>
+                    </li>
+                    <li class="aside-footer__lang-item">
+                        <p class="aside-footer__lang">EN</p>
+                    </li>
+                    <li class="aside-footer__lang-item">
+                        <p class="aside-footer__lang">CH</p>
+                    </li>
                 </ul>
-            </footer>
+            </div>
 
+        </aside>
+
+        <aside class="modal modal--feedback hidden">
+            <button class="modal__action modal__action--close"></button>
+            <h1 class="modal__title title">Обратная связь</h1>
+
+            <div class="modal__wrapper">
+                <fieldset class="modal__fieldset fieldset">
+                    <label class="fieldset__name-label">
+                        <input class="fieldset__name" placeholder="Имя" type="text"  name="" id="">
+                    </label>
+                    <label class="fieldset__phone-label">
+                        <input class="fieldset__phone" placeholder="Телефон" type="text" name="" id="">
+                    </label>
+                    <label class="fieldset__email-label">
+                        <input class="fieldset__email" placeholder="Электронная почта" type="text" name="" id="">
+                    </label>
+                    <label class="fieldset__message-label">
+                        <input class="fieldset__message" placeholder="Сообщение" type="text" name="" id="">
+                    </label>
+                </fieldset>
+
+                <p class="modal__description">Нажимая "отправить", вы даете согласие на  <a class="modal__link" href="">обработку персональных данных</a> и соглашаетесь с нашей <a class="modal__link" href="">политикой конфиденциальности</a></p>
+            </div>
+        </aside>
+
+        <aside class="modal modal-call hidden">
+            <h1 class="modal-call__title title">Заказать звонок</h1>
+            <fieldset class="modal-feedback__fieldset fieldset">
+                <label class="fieldset__phone-label">
+                    <input class="fieldset__phone" type="text" name="" id="">
+                </label>
+            </fieldset>
         </aside>
 
         <div class="container">
             <header class="header">
                 <ul class="header__actions">
                     <li class="header__item">
-                        <button class="header__action header__action--burger"></button>
+                        <button class="round-button round-button--burger"></button>
                     </li>
                     <li class="header__item">
                         <a class="header__action header__action--logo" href=""></a>
                     </li>
                     <li class="header__item hidden">
-                        <button class="header__action header__action--call"></button>
+                        <button class="round-button round-button--call"></button>
                     </li>
                     <li class="header__item hidden">
-                        <button class="header__action header__action--chat"></button>
+                        <button class="round-button round-button--chat"></button>
                     </li>
                     <li class="header__item hidden">
-                        <button class="header__action header__action--profile"></button>
+                        <button class="round-button round-button--profile"></button>
                     </li>
                     <li class="header__item">
-                        <button class="header__action header__action--repair"></button>
+                        <button class="round-button round-button--repair"></button>
                     </li>
                     <li class="header__item">
-                        <button class="header__action header__action--checkstatus"></button>
+                        <button class="round-button round-button--checkstatus"></button>
                     </li>
                 </ul>
             </header>
@@ -119,13 +155,13 @@
                 <section class="hero">
 
                     <div class="hero__container">
-                        <h1 class="hero__title">Услуги и сервисы</h1>
-                        <ul class="hero__actions hidden">
+                        <h1 class="hero__title title">Услуги и сервисы</h1>
+                        <ul class="hero__actions">
                             <li class="hero__item">
-                                <button class="hero__action hero__action--repair">Оставить заявку</button>
+                                <button class="hero__action round-button round-button--repair-with-text">Оставить заявку</button>
                             </li>
                             <li class="hero__item">
-                                <button class="hero__action hero__action--check">Статус ремонта</button>
+                                <button class="hero__action round-button round-button--checkstatus-with-text">Статус ремонта</button>
                             </li>
                         </ul>
                     </div>
@@ -184,74 +220,74 @@
     
                 </section>
 
-                <section class="brands">
-                    <h2 class="brands__title">Ремонт техники различных брендов</h2>
+                <section class="section brands">
+                    <h2 class="section__title">Ремонт техники различных брендов</h2>
         
-                    <div class="brands__container">
-                        <div class="brands__my-swiper swiper">
-                            <ul class="swiper-wrapper">
-                                <li class="swiper-slide">
-                                    <a class="swiper-slide__link" href="">
+                    <div class="section__container">
+                        <div class="brands__my-swiper swiper-brands">
+                            <ul class="swiper-wrapper swiper-wrapper--brands">
+                                <li class="swiper-slide swiper-slide--brands">
+                                    <a class="swiper-slide__link swiper-slide__link--brands" href="">
                                         <img class="swiper-slide__logo" src="img/brands/lenovo-logo.png" alt="">
                                         <img class="swiper-slide__go" src="img/brands/go.png" alt="">
                                     </a>
                                 </li>
-                                <li class="swiper-slide">
-                                    <a class="swiper-slide__link" href="">
+                                <li class="swiper-slide swiper-slide--brands">
+                                    <a class="swiper-slide__link swiper-slide__link--brands" href="">
                                         <img class="swiper-slide__logo" src="img/brands/samsung-logo.png" alt="">
                                         <img class="swiper-slide__go" src="img/brands/go.png" alt="">
                                     </a>
                                 </li>
-                                <li class="swiper-slide">
-                                    <a class="swiper-slide__link" href="">
+                                <li class="swiper-slide swiper-slide--brands">
+                                    <a class="swiper-slide__link swiper-slide__link--brands" href="">
                                         <img class="swiper-slide__logo" src="img/brands/apple-logo.png" alt="">
                                         <img class="swiper-slide__go" src="img/brands/go.png" alt="">
                                     </a>
                                 </li>
-                                <li class="swiper-slide hidden-768px">
-                                    <a class="swiper-slide__link" href="">
+                                <li class="swiper-slide swiper-slide--brands hidden-768px">
+                                    <a class="swiper-slide__link swiper-slide__link--brands" href="">
                                         <img class="swiper-slide__logo" src="img/brands/ViewSonic-logo.png" alt="">
                                         <img class="swiper-slide__go" src="img/brands/go.png" alt="">
                                     </a>
                                 </li>
-                                <li class="swiper-slide">
-                                    <a class="swiper-slide__link" href="">
+                                <li class="swiper-slide swiper-slide--brands">
+                                    <a class="swiper-slide__link swiper-slide__link--brands" href="">
                                         <img class="swiper-slide__logo" src="img/brands/bosch-logo.png" alt="">
                                         <img class="swiper-slide__go" src="img/brands/go.png" alt="">
                                     </a>
                                 </li>
-                                <li class="swiper-slide">
-                                    <a class="swiper-slide__link" href="">
+                                <li class="swiper-slide swiper-slide--brands">
+                                    <a class="swiper-slide__link swiper-slide__link--brands" href="">
                                         <img class="swiper-slide__logo" src="img/brands/hp-logo.png" alt="">
                                         <img class="swiper-slide__go" src="img/brands/go.png" alt="">
                                     </a>
                                 </li>
-                                <li class="swiper-slide">
-                                    <a class="swiper-slide__link" href="">
+                                <li class="swiper-slide swiper-slide--brands">
+                                    <a class="swiper-slide__link swiper-slide__link--brands" href="">
                                         <img class="swiper-slide__logo" src="img/brands/acer-logo.png" alt="">
                                         <img class="swiper-slide__go" src="img/brands/go.png" alt="">
                                     </a>
                                 </li>
-                                <li class="swiper-slide hidden-768px">
-                                    <a class="swiper-slide__link" href="">
+                                <li class="swiper-slide swiper-slide--brands hidden-768px">
+                                    <a class="swiper-slide__link swiper-slide__link--brands" href="">
                                         <img class="swiper-slide__logo" src="img/brands/sony-logo.png" alt="">
                                         <img class="swiper-slide__go" src="img/brands/go.png" alt="">
                                     </a>
                                 </li>
-                                <li class="swiper-slide hidden-1120px">
-                                    <a class="swiper-slide__link" href="">
+                                <li class="swiper-slide swiper-slide--brands hidden-1120px">
+                                    <a class="swiper-slide__link swiper-slide__link--brands" href="">
                                         <img class="swiper-slide__logo" src="img/brands/lenovo-logo.png" alt="">
                                         <img class="swiper-slide__go" src="img/brands/go.png" alt="">
                                     </a>
                                 </li>
-                                <li class="swiper-slide hidden-1120px">
-                                    <a class="swiper-slide__link" href="">
+                                <li class="swiper-slide swiper-slide--brands hidden-1120px">
+                                    <a class="swiper-slide__link swiper-slide__link--brands" href="">
                                         <img class="swiper-slide__logo" src="img/brands/samsung-logo.png" alt="">
                                         <img class="swiper-slide__go" src="img/brands/go.png" alt="">
                                     </a>
                                 </li>
-                                <li class="swiper-slide hidden-1120px">
-                                    <a class="swiper-slide__link" href="">
+                                <li class="swiper-slide swiper-slide--brands hidden-1120px">
+                                    <a class="swiper-slide__link swiper-slide__link--brands" href="">
                                         <img class="swiper-slide__logo" src="img/brands/apple-logo.png" alt="">
                                         <img class="swiper-slide__go" src="img/brands/go.png" alt="">
                                     </a>
@@ -260,14 +296,149 @@
                             <div class="swiper-pagination"></div>
                         </div>
             
-                        <button class="brands__show-more hidden-320px">Показать все</button>
+                        <button class="show-more-button">Показать все</button>
                     </div>
                 </section>
-        
+                
+
+                <section class="section devices">
+
+                    <h2 class="section__title">
+                        ремонт различных видов техники
+                    </h2>
+
+                    <div class="section__container">
+                        <div class="devices__swiper swiper-devices">
+                            <ul class="swiper-wrapper swiper-wrapper--devices">
+                                <li class="swiper-slide swiper-slide--devices">
+                                    <a class="swiper-slide__link swiper-slide__link--devices" href="">
+                                        <span class="swiper-slide__device-name">Ремонт ноутбуков</span>
+                                        <img class="swiper-slide__go" src="/img/brands/go.png" alt="">
+                                    </a>
+                                </li>
+                                <li class="swiper-slide swiper-slide--devices">
+                                    <a class="swiper-slide__link swiper-slide__link--devices" href="">
+                                        <span class="swiper-slide__device-name">Ремонт планшетов</span>
+                                        <img class="swiper-slide__go" src="/img/brands/go.png" alt="">
+                                    </a>
+                                </li>
+                                <li class="swiper-slide swiper-slide--devices">
+                                    <a class="swiper-slide__link swiper-slide__link--devices" href="">
+                                        <span class="swiper-slide__device-name">Ремонт ПК</span>
+                                        <img class="swiper-slide__go" src="/img/brands/go.png" alt="">
+                                    </a>
+                                </li>
+                                <li class="swiper-slide swiper-slide--devices hidden-768px">
+                                    <a class="swiper-slide__link swiper-slide__link--devices" href="">
+                                        <span class="swiper-slide__device-name">Ремонт мониторов</span>
+                                        <img class="swiper-slide__go" src="/img/brands/go.png" alt="">
+                                    </a>
+                                </li>
+                                <li class="swiper-slide swiper-slide--devices hidden-1120px">
+                                    <a class="swiper-slide__link swiper-slide__link--devices" href="">
+                                        <span class="swiper-slide__device-name">Ремонт ноутбуков</span>
+                                        <img class="swiper-slide__go" src="/img/brands/go.png" alt="">
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                        <button class="show-more-button show-more-button--devices ">Показать все</button>
+                    </div>
+                </section>
+
+
+                <section class="section services">
+
+                    <h2 class="section__title">цены на услуги</h2>
+
+                    <div class="section__container">
+                        <div class="services__my-swiper swiper-services">
+                            <div class="swiper-services__caption hidden">
+                                <span class="swiper-services__caption-service">Ремонтные услуги</span>
+                                <span class="swiper-services__caption-price">Цена</span>
+                                <span class="swiper-services__caption-duration">Срок</span>
+                                <span class="swiper-services__caption-filler"></span>
+                            </div>
+                            <ul class="swiper-wrapper swiper-wrapper--services">
+                                <li class="swiper-slide swiper-slide--services ">
+                                    <p class="swiper-slide__title">Ремонтные услуги</p>
+                                    <span class="swiper-slide__service ">Диагностика</span>
+
+                                    <p class="swiper-slide__title">Цена</p>
+                                    <span class="swiper-slide__price ">Бесплатно</span>
+
+                                    <p class="swiper-slide__title">Срок</p>
+                                    <span class="swiper-slide__duration ">30 мин</span>
+
+                                    <a class="swiper-slide__link swiper-slide__link--services " href=""></a>
+                                </li>
+                                <li class="swiper-slide swiper-slide--services ">
+                                    <p class="swiper-slide__title">Ремонтные услуги</p>
+                                    <span class="swiper-slide__service ">Замена дисплея</span>
+
+                                    <p class="swiper-slide__title">Цена</p>
+                                    <span class="swiper-slide__price ">1000 &#8381;</span>
+
+                                    <p class="swiper-slide__title">Срок</p>
+                                    <span class="swiper-slide__duration ">30-120 мин</span>
+
+                                    <a class="swiper-slide__link swiper-slide__link--services "  href=""></a>
+                                </li>
+                                <li class="swiper-slide swiper-slide--services ">
+                                    <p class="swiper-slide__title">Ремонтные услуги</p>
+                                    <span class="swiper-slide__service">Замена полифонического динамика</span>
+
+                                    <p class="swiper-slide__title">Цена</p>
+                                    <span class="swiper-slide__price">1000 &#8381;</span>
+
+                                    <p class="swiper-slide__title">Срок</p>
+                                    <span class="swiper-slide__duration">30-120 мин</span>
+                                    
+                                    <a class="swiper-slide__link swiper-slide__link--services" href=""></a>
+                                </li>
+                                <li class="swiper-slide swiper-slide--services">
+                                    <p class="swiper-slide__title">Ремонтные услуги</p>
+                                    <span class="swiper-slide__service">Тестирование с выдачей технического заключения</span>
+
+                                    <p class="swiper-slide__title">Цена</p>
+                                    <span class="swiper-slide__price">1000 &#8381;</span>
+
+                                    <p class="swiper-slide__title">Срок</p>
+                                    <span class="swiper-slide__duration">30-120 мин</span>
+
+                                    <a class="swiper-slide__link swiper-slide__link--services" href=""></a>
+                                </li>
+                                <li class="swiper-slide swiper-slide--services">
+                                    <p class="swiper-slide__title">Ремонтные услуги</p>
+                                    <span class="swiper-slide__service">Замена программного обеспечения</span>
+
+                                    <p class="swiper-slide__title">Цена</p>
+                                    <span class="swiper-slide__price">1000 &#8381;</span>
+
+                                    <p class="swiper-slide__title">Срок</p>
+                                    <span class="swiper-slide__duration">30-120 мин</span>
+
+                                    <a class="swiper-services__link swiper-slide__link--services" href=""></a>
+                                </li>
+                            </ul>
+
+                            <div class="swiper-pagination"></div>
+                        </div>
+
+                        <p class="services__disclaimer">Все цены указаны с учетом НДС. Стоимость ремонта указана на единичную услугу. Для получения коммерческого предложения на постоянное обслуживание, оставьте заявку.</p>
+                        <a class="services__link" href="">Получить коммерческое предложение</a>
+                    </div>
+                </section>
 
             </main>
-        </div>
 
-        <script src="script.js"></script>
+            <footer class="footer">
+                <p class="footer__developer">©<time type="datetime" class="footer__year">2019</time><br>
+                    Разработано командой Apesong</p>
+                <p class="footer__confidential-rules">Политика конфиденциальности</p>
+                <p class="footer__disclaimer">Информация, размещенная на данной странице, не является публичной офертой</p>
+            </footer>
+        </div>
     </body>
 </html>
