@@ -2,7 +2,7 @@
 {
     font-family: 'TT Lakes';
     margin: 0;
-    background-color: #f8f8f8;
+    /* background-color: #f8f8f8; */
 }
 
 /* #region SWIPER CSS-PROPS*/
@@ -36,38 +36,102 @@
     height: 100%;
     margin: 0;
     background-color: white;
+    min-width: 320px;
+    max-width: 440px;
 
-    
+    .modal__action {
+        margin-top: 24px;
+        margin-left: 16px;
+
+        @media screen and (min-width: 513px) {
+            position: absolute;
+            top:15px;
+            left:-90px;
+        }
+    }
+
+    /* Заголовок модалки */
     .modal__title {
         padding-left:32px;
         margin-top: 40px;
         margin-bottom:24px;
     }
 
-    /* Модификаторы */
-    &.modal--burger {
+    /* Обертка для всего, что под заголовком модалок 
+    для выравнивания по центру */
+    .modal__wrapper {
         display: flex;
         flex-direction: column;
-        width:calc(320px - 48px);
-        padding:0 24px;
-    
-        box-shadow: -2px 0px 4px 
-        rgba(69, 79, 126, 0.02), 
-        16px 0px 52px 
-        rgba(14, 24, 80, 0.2);
+        padding-left: 16px;
+        padding-right: 16px;
+
+        @media screen and (min-width: 513px){
+            padding-left: 32px;
+            padding-right: 32px;
+        }
     }
+
+    .fieldset__field {
+        display: block;
+        padding:12px 16px;
+        margin-bottom: 16px;
+        width:100%;
+        border: 1px solid #EAEAEA;
+        border-radius: 5px;
+        transition: 0.4s ease-in;
+        transition-property: border-color;
+        font-size: 16px;
+        font-family: 'TT Lakes';
+        
+        &::placeholder {
+            color:#B5B6BC;
+        }
+
+        &:hover{
+            border-color: #7e7e7e;
+        }
+
+        
+        &.fieldset__field--message {
+            height: 118px;
+            resize: none;
+        }
+    }
+
+    /* Описание */
+    .modal__description {
+        color:#7E7E82;
+        font-family: 'TT Lakes Medium';
+        font-size: 14px;
+        line-height: 16px;
+    }
+
+    /* Ссылки в описании */
+    .modal__link {
+        color:#FF3E79;
+    }
+
+    /* Кнопка отправить */
+    .modal__send {
+        width: 136px;
+        height: 32px;
+        background: url('components/modal/send.png') transparent;
+        margin-top: 19px;
+        margin-left: auto;
+    }
+
+    /* Модификаторы для модалок */
     
     &.modal--feedback {
         right:0;
-        max-width: 440px;
-        min-width: 320px;
+        box-shadow: 16px 0px 52px 0px #0E185033;
     }
 
     &.modal--call {
         right:0;
+        box-shadow: 16px 0px 52px 0px #0E185033;
     }
 }
-
 
 /* Блок title для hero и модалок*/
 .title {
@@ -102,7 +166,9 @@
     margin: 0;
     transition: 0.1s ease-in;
 
-    &.round-button--transition-scale:hover {
+    &.round-button--transition-scale:hover,
+    &.round-button--repair-with-text:hover::after,
+    &.round-button--checkstatus-with-text:hover::after {
         transform:scale(1.2);
     }
 
@@ -118,7 +184,7 @@
         background-image: url("components/round-button/img/search.svg");
     }
 
-    &.round-button--chat{
+    &.round-button--chat {
         background-image: url("/components/round-button/img/chat.svg");
     }
 
@@ -129,9 +195,11 @@
     &.round-button--repair {
         background-image: url('components/round-button/img/repair.svg');
     }
+
     &.round-button--repair-with-text {
         width:auto;
     }
+
     &.round-button--repair-with-text::after {
         content: '';
         position: absolute;
@@ -140,12 +208,17 @@
         top:0;
         right:-49px;
         background-image: url('components/round-button/img/repair.svg');
+        transition: 0.1s ease-in;
     }
 
     &.round-button--checkstatus {
         background-image: url("components/round-button/img/checkstatus.svg");
     }
-    &.round-button--checkstatus-with-text {width: auto;}
+
+    &.round-button--checkstatus-with-text {
+        width: auto;
+    
+    }
     &.round-button--checkstatus-with-text::after {
         content: '';
         position: absolute;
@@ -154,6 +227,7 @@
         top:0;
         right:-49px;
         background-image: url('components/round-button/img/checkstatus.svg');
+        transition: 0.1s ease-in;
     }
 
     &.round-button--close {
@@ -167,7 +241,7 @@
     max-width:1120px;
     max-height: min-content;
     margin-left:auto;
-    margin-right: auto;
+    /* margin-right: auto; */
     width: 100vw;
     background-color: #f8f8f8;
     overflow:hidden;
@@ -231,12 +305,42 @@
 /* ******************************************* */
 .aside-menu
 {
+    display: flex;
+    flex-direction: column;
+    max-width: 320px;
+    padding:0 24px;
+
+    box-shadow: -2px 0px 4px 
+    rgba(69, 79, 126, 0.02), 
+    16px 0px 52px 
+    rgba(14, 24, 80, 0.2);
+
+    &.modal {
+        display: none;
+
+        @media screen and (min-width:1440px) {
+            display: flex;
+            position: static;
+            box-shadow: none;
+            min-width:306px;
+
+            & .round-button--close {
+                display: none;
+            }
+        }
+    }
+
     .aside-header
     {
         height: 51px;
         margin:0;
         margin-bottom:50.27px;
         margin-top: 18.73px;
+
+        @media screen and (min-width: 1440px) {
+            margin-top: 35px;
+            margin-bottom: 43px;
+        }
     }
     
     .aside-header__actions
@@ -249,6 +353,11 @@
         list-style: none;
         padding:0;
         margin:0;
+
+        @media screen and (min-width: 1440px){
+            gap:0;
+            justify-content: space-between;
+        }
 
         .lnk-logo
         {
@@ -265,8 +374,6 @@
         }
         
     }
-    
-    
     
     .aside__nav
     {
@@ -314,6 +421,10 @@
     .aside-footer
     {
         margin-top:auto;
+
+        @media screen  and (min-width:1440px){
+            margin-top: 241px;
+        }
 
         .aside-footer__actions
         {
@@ -371,11 +482,12 @@
             }
         }
     }
+
 }
 
 
-/* Мод для затенения при включенном меню aside */
-.container--transparent {
+/* Модификатор для затенения при включенном меню aside */
+.main-wrapper--transparent {
     z-index: 1;
     opacity: 0.2;
 }
@@ -384,7 +496,7 @@
     overflow: hidden;
 }
 
-
+/* Чердак */
 .header
 {
     height: 88px;
@@ -393,7 +505,7 @@
     background-color: white;
     border-bottom: 1px solid #D9FFF5;
 
-    @media screen and (min-width: 1120px) {
+    @media screen and (min-width: 1440px) {
         &{
             display:none;
         }
@@ -443,7 +555,7 @@
                     border-radius: 2px;
                 }
 
-                @media screen and (min-width:768px) and (max-width:1119px) {
+                @media screen and (min-width:768px) and (max-width:1439px) {
                     &.header__action--logo::after{
                         display: none;
                     }
@@ -453,7 +565,7 @@
     }
     
 
-    @media screen and (min-width:768px) and (max-width:1119px) {
+    @media screen and (min-width:768px) and (max-width:1439px) {
 
 
     .header__actions
@@ -506,6 +618,7 @@
     }
 }
 
+/* Основная секция */
 .main 
 {
     position: relative;
@@ -514,6 +627,12 @@
     border-bottom: #B8FFEC;
 }
 
+/* Обертка для всего кроме бокового меню */
+.main-wrapper {
+    background-color: #f8f8f8;
+}
+
+/* Секция 'Услуги и сервисы, вводная секция' */
 .hero {
     .hero__container {
         display: flex;
@@ -546,17 +665,6 @@
         font-size: 16px;
         font-family: 'TT Lakes Medium';
     }
-    
-    /* .hero__action--repair:after {
-        content: '';
-        position: absolute;
-        width: 40px;
-        height: 40px;
-        top:0;
-        right:-49px;
-        background: url('img/header/repair.svg');
-    } */
-    
     
     .hero__action--check:after {
         content: '';
@@ -645,6 +753,14 @@
         font-size: 14px;
         line-height: 18px;
         letter-spacing: 0.2px;
+
+        .hero__768-txt-part {
+            display: none;
+        }
+
+        .hero__1120-txt-part {
+            display: none;
+        }
     }
     
     .hero__read-more {
@@ -687,7 +803,7 @@
             line-height:20px;
         }
     
-        .hero__768-txt-part {
+        .hero__about .hero__768-txt-part {
             display: inline;
         }
     
@@ -705,7 +821,7 @@
         }
     }
 
-    @media screen and (min-width:768px) and (max-width:1119px){
+    @media screen and (min-width:768px){
         .hero__title
         {
             padding-left: 24px;
@@ -719,12 +835,12 @@
     }
 
     @media screen and (min-width:1000px) {
-        .hero__1120-txt-part {
+        .hero__about .hero__1120-txt-part {
             display: inline;;
         }
     }
 
-    @media  screen and (min-width:1120px) {
+    @media  screen and (min-width:1440px) {
 
         .hero__about {
             width: 490px;
@@ -760,7 +876,7 @@
     }
 }
 
-
+/* Секция 'Ремонт техники различных брендов' */
 .brands {    
     min-height: 220px;
 
@@ -869,7 +985,7 @@
     }
 }
 
-
+/* Секция 'Ремонт различных видов техники' */
 .devices {
 
     .swiper-slide__go {
@@ -915,7 +1031,7 @@
     }
 }
 
-
+/* Секция 'Цены на услуги' */
 .services {
 
     .swiper-services {
@@ -924,10 +1040,13 @@
         letter-spacing: 0.2px;
     }
     
-    
     .services__my-swiper {
         margin-left: -8px;
         margin-right: -8px;
+    }
+
+    .swiper-services__caption {
+        display:none;
     }
     
     .swiper-slide__title
@@ -1055,8 +1174,7 @@
     }
 }
 
-
-
+/* Подвал */
 .footer {
     font-size: 14px;
     border-top: 1px solid #D9FFF5;
@@ -1118,7 +1236,7 @@
     }
 }
 
-@media  screen and (min-width: 1120px) {
+@media screen and (min-width: 1120px) {
 
     .hidden-1120px {
         display: none;
@@ -1128,10 +1246,19 @@
 
 @media screen and (min-width:1120px)
 {
-    .body .container {
+    .body__container {
         width:1120px;
         margin-left:auto;
         margin-right:auto;
+    }
+}
+
+@media screen and (min-width: 1440px)
+{
+    .body__container {
+        width: 1440px;
+        display: flex;
+        flex-direction: row;
     }
 }
 
