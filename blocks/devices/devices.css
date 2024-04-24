@@ -1,0 +1,46 @@
+/* Секция 'Ремонт различных видов техники' */
+.devices {
+
+    .swiper-slide__go {
+        align-self: flex-end;
+        margin-right:16px;
+        margin-bottom: 16px;
+    }
+    
+    .swiper-slide--devices {
+        width: 240px;
+        height: 160px;
+    }
+    
+    .swiper-slide__link--devices {
+        display: flex;
+        width:100%;
+        justify-content: space-between;
+    }
+    
+    .swiper-slide__device-name {
+        font-family: 'TT Lakes Medium';
+        text-wrap: nowrap;
+        padding-top: 16px;
+        padding-left: 16px;
+        align-self: flex-start;
+    }
+
+    @media screen and (min-width:540px) and (max-width: 1119px){
+        .swiper-wrapper--devices{
+            gap:16px 24px;
+            flex-wrap:wrap;
+            transform: none !important;
+        }
+    }
+    
+    @media screen and (min-width:540px) {
+        .show-more-button {display: block;}
+    }
+
+    @media  screen and (min-width: 1120px) {
+        .swiper-wrapper--devices {
+            gap: 16px 32px;
+        }
+    }
+}

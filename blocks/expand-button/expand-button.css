@@ -1,0 +1,34 @@
+/* Блок - кнопка показать все*/
+.expand-button {
+    position: relative;
+    display: block;
+    padding: 24px 0 0 24px;
+    font-family: 'TT Lakes Medium';
+    font-size: 16px;
+    color:#1B1C21;
+
+    &::before {
+        content:'';
+        position:absolute;
+        width: 24px;
+        height: 24px;
+        left:-8px;
+        top: 22px;
+        background: url('img/expand.svg') no-repeat center;
+    }
+
+    &.expand-button--rotated::before {
+        rotate: 180deg;
+    }
+
+    @media screen and (max-width:400px) {
+        display: none;
+    }
+
+    /* Разные брэйкпоинты у разных свайперов */
+    &.expand-button--devices{
+        @media screen and (max-width:560px) {
+            display: none;
+        }
+    }
+}

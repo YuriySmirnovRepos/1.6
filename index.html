@@ -13,12 +13,26 @@
 
         <script src="script.js" defer></script>
         <link rel="stylesheet" href="style.css">
+
+        <link href="blocks/action-button/action-button.css" rel="stylesheet">
+        <link href="blocks/title/title.css" rel="stylesheet">
+        <link href="blocks/modal/modal.css" rel="stylesheet">
+        <link href="blocks/aside-menu/aside-menu.css" rel="stylesheet">
+        <link href="blocks/section/section.css" rel="stylesheet">
+        <link href="blocks/expand-button/expand-button.css" rel="stylesheet">
+        <link href="blocks/header/header.css" rel="stylesheet">
+        <link href="blocks/hero/hero.css" rel="stylesheet">
+        <link href="blocks/brands/brands.css" rel="stylesheet">
+        <link href="blocks/devices/devices.css" rel="stylesheet">
+        <link href="blocks/services/services.css" rel="stylesheet">
+        <link href="blocks/footer/footer.css" rel="stylesheet">
+
         <title>Фирма CPS</title>
     </head>
-    <body class="body">
+    <body class="page">
 
         <aside class="modal modal--feedback hidden">
-            <button class="modal__action round-button round-button--close round-button--transition-scale"></button>
+            <button class="modal__action action-button action-button--close action-button--transition-scale"></button>
             <h1 class="modal__title title">Обратная связь</h1>
 
             <div class="modal__wrapper">
@@ -43,7 +57,7 @@
         </aside>
 
         <aside class="modal modal--call hidden">
-            <button class="modal__action round-button round-button--close round-button--transition-scale"></button>
+            <button class="modal__action action-button action-button--close action-button--transition-scale"></button>
             <h1 class="modal__title title">Заказать звонок</h1>
             <div class="modal__wrapper">
                 <fieldset class="modal__fieldset fieldset">
@@ -57,19 +71,19 @@
             </div>
         </aside>
 
-        <div class="body__container">
-            <aside class="modal aside-menu">
+        <div class="page__container">
+            <aside class="aside-menu">
 
                 <div class="aside-header">
                     <ul class="aside-header__actions">
                         <li class="aside-header__item">
-                            <button class="round-button round-button--close round-button--transition-scale"></button>
+                            <button class="action-button action-button--close action-button--transition-scale"></button>
                         </li>
                         <li class="aside-header__item">
                             <a href="" class="aside-header__action lnk-logo"></a>
                         </li>
                         <li class="aside-header__item">
-                            <button class="round-button round-button--search round-button--transition-scale"></button>
+                            <button class="action-button action-button--search action-button--transition-scale"></button>
                         </li>
                     </ul>
                 </div>
@@ -104,13 +118,13 @@
                 <div class="aside-footer">
                     <ul class="aside-footer__actions">
                         <li class="aside-footer__item">
-                            <a href="" class="round-button round-button--call round-button--transition-scale"></a>
+                            <a href="" class="action-button action-button--call action-button--transition-scale"></a>
                         </li>
                         <li class="aside-footer__item">
-                            <a href="" class="round-button round-button--chat round-button--transition-scale"></a>
+                            <a href="" class="action-button action-button--chat action-button--transition-scale"></a>
                         </li>
                         <li class="aside-footer__item">
-                            <a href="" class="round-button round-button--profile round-button--transition-scale"></a>
+                            <a href="" class="action-button action-button--profile action-button--transition-scale"></a>
                         </li>
                     </ul>
     
@@ -135,25 +149,25 @@
                 <header class="header">
                     <ul class="header__actions">
                         <li class="header__item">
-                            <button class="round-button round-button--burger round-button--transition-scale"></button>
+                            <button class="action-button action-button--burger action-button--transition-scale"></button>
                         </li>
                         <li class="header__item">
                             <a class="header__action header__action--logo" href=""></a>
                         </li>
                         <li class="header__item hidden">
-                            <button class="round-button round-button--call round-button--transition-scale"></button>
+                            <button class="action-button action-button--call action-button--transition-scale"></button>
                         </li>
                         <li class="header__item hidden">
-                            <button class="round-button round-button--chat round-button--transition-scale"></button>
+                            <button class="action-button action-button--chat action-button--transition-scale"></button>
                         </li>
                         <li class="header__item hidden">
-                            <button class="round-button round-button--profile round-button--transition-scale"></button>
+                            <button class="action-button action-button--profile action-button--transition-scale"></button>
                         </li>
                         <li class="header__item">
-                            <button class="round-button round-button--repair round-button--transition-scale"></button>
+                            <button class="action-button action-button--repair action-button--transition-scale"></button>
                         </li>
                         <li class="header__item">
-                            <button class="round-button round-button--checkstatus round-button--transition-scale"></button>
+                            <button class="action-button action-button--checkstatus action-button--transition-scale"></button>
                         </li>
                     </ul>
                 </header>
@@ -166,10 +180,10 @@
                             <h1 class="hero__title title">Услуги и сервисы</h1>
                             <ul class="hero__actions">
                                 <li class="hero__item">
-                                    <button class="hero__action round-button round-button--repair-with-text">Оставить заявку</button>
+                                    <button class="hero__action action-button action-button--repair-with-text">Оставить заявку</button>
                                 </li>
                                 <li class="hero__item">
-                                    <button class="hero__action round-button round-button--checkstatus-with-text">Статус ремонта</button>
+                                    <button class="hero__action action-button action-button--checkstatus-with-text">Статус ремонта</button>
                                 </li>
                             </ul>
                         </div>
@@ -213,7 +227,7 @@
                                     Мы успешно работаем с 1992 года и заслужили репутацию надежного партнера</span><span class="hero__1120-txt-part">, что подтверждает большое количество постоянных клиентов. Мы гордимся тем, что к нам обращаются по рекомендациям и, в свою очередь, 
                                     советуют нас родным и близким.
                                 </span>
-                                <button class="hero__read-more">Читать далее</button>
+                                <button class="expand-button">Читать далее</button>
                             </p>
                             <img class="hero__pic" src="img/hero/logoPicture.png" alt="CPS logo photo"
                             srcset="
@@ -236,75 +250,75 @@
                                 <ul class="swiper-wrapper swiper-wrapper--brands">
                                     <li class="swiper-slide swiper-slide--brands">
                                         <a class="swiper-slide__link swiper-slide__link--brands" href="">
-                                            <img class="swiper-slide__logo" src="img/brands/lenovo-logo.png" alt="">
-                                            <img class="swiper-slide__go" src="img/brands/go.png" alt="">
+                                            <img class="swiper-slide__logo" src="blocks/brands/img/lenovo-logo.png" alt="">
+                                            <img class="swiper-slide__go" src="blocks/brands/img/go.png" alt="">
                                         </a>
                                     </li>
                                     <li class="swiper-slide swiper-slide--brands">
                                         <a class="swiper-slide__link swiper-slide__link--brands" href="">
-                                            <img class="swiper-slide__logo" src="img/brands/samsung-logo.png" alt="">
-                                            <img class="swiper-slide__go" src="img/brands/go.png" alt="">
+                                            <img class="swiper-slide__logo" src="blocks/brands/img/samsung-logo.png" alt="">
+                                            <img class="swiper-slide__go" src="blocks/brands/img/go.png" alt="">
                                         </a>
                                     </li>
                                     <li class="swiper-slide swiper-slide--brands">
                                         <a class="swiper-slide__link swiper-slide__link--brands" href="">
-                                            <img class="swiper-slide__logo" src="img/brands/apple-logo.png" alt="">
-                                            <img class="swiper-slide__go" src="img/brands/go.png" alt="">
+                                            <img class="swiper-slide__logo" src="blocks/brands/img/apple-logo.png" alt="">
+                                            <img class="swiper-slide__go" src="blocks/brands/img/go.png" alt="">
                                         </a>
                                     </li>
                                     <li class="swiper-slide swiper-slide--brands hidden-768px">
                                         <a class="swiper-slide__link swiper-slide__link--brands" href="">
-                                            <img class="swiper-slide__logo" src="img/brands/ViewSonic-logo.png" alt="">
-                                            <img class="swiper-slide__go" src="img/brands/go.png" alt="">
+                                            <img class="swiper-slide__logo" src="blocks/brands/img/ViewSonic-logo.png" alt="">
+                                            <img class="swiper-slide__go" src="blocks/brands/img/go.png" alt="">
                                         </a>
                                     </li>
                                     <li class="swiper-slide swiper-slide--brands">
                                         <a class="swiper-slide__link swiper-slide__link--brands" href="">
-                                            <img class="swiper-slide__logo" src="img/brands/bosch-logo.png" alt="">
-                                            <img class="swiper-slide__go" src="img/brands/go.png" alt="">
+                                            <img class="swiper-slide__logo" src="blocks/brands/img/bosch-logo.png" alt="">
+                                            <img class="swiper-slide__go" src="blocks/brands/img/go.png" alt="">
                                         </a>
                                     </li>
                                     <li class="swiper-slide swiper-slide--brands">
                                         <a class="swiper-slide__link swiper-slide__link--brands" href="">
-                                            <img class="swiper-slide__logo" src="img/brands/hp-logo.png" alt="">
-                                            <img class="swiper-slide__go" src="img/brands/go.png" alt="">
+                                            <img class="swiper-slide__logo" src="blocks/brands/img/hp-logo.png" alt="">
+                                            <img class="swiper-slide__go" src="blocks/brands/img/go.png" alt="">
                                         </a>
                                     </li>
                                     <li class="swiper-slide swiper-slide--brands">
                                         <a class="swiper-slide__link swiper-slide__link--brands" href="">
-                                            <img class="swiper-slide__logo" src="img/brands/acer-logo.png" alt="">
-                                            <img class="swiper-slide__go" src="img/brands/go.png" alt="">
+                                            <img class="swiper-slide__logo" src="blocks/brands/img/acer-logo.png" alt="">
+                                            <img class="swiper-slide__go" src="blocks/brands/img/go.png" alt="">
                                         </a>
                                     </li>
                                     <li class="swiper-slide swiper-slide--brands hidden-768px">
                                         <a class="swiper-slide__link swiper-slide__link--brands" href="">
-                                            <img class="swiper-slide__logo" src="img/brands/sony-logo.png" alt="">
-                                            <img class="swiper-slide__go" src="img/brands/go.png" alt="">
+                                            <img class="swiper-slide__logo" src="blocks/brands/img/sony-logo.png" alt="">
+                                            <img class="swiper-slide__go" src="blocks/brands/img/go.png" alt="">
                                         </a>
                                     </li>
                                     <li class="swiper-slide swiper-slide--brands hidden-1120px">
                                         <a class="swiper-slide__link swiper-slide__link--brands" href="">
-                                            <img class="swiper-slide__logo" src="img/brands/lenovo-logo.png" alt="">
-                                            <img class="swiper-slide__go" src="img/brands/go.png" alt="">
+                                            <img class="swiper-slide__logo" src="blocks/brands/img/lenovo-logo.png" alt="">
+                                            <img class="swiper-slide__go" src="blocks/brands/img/go.png" alt="">
                                         </a>
                                     </li>
                                     <li class="swiper-slide swiper-slide--brands hidden-1120px">
                                         <a class="swiper-slide__link swiper-slide__link--brands" href="">
-                                            <img class="swiper-slide__logo" src="img/brands/samsung-logo.png" alt="">
-                                            <img class="swiper-slide__go" src="img/brands/go.png" alt="">
+                                            <img class="swiper-slide__logo" src="blocks/brands/img/samsung-logo.png" alt="">
+                                            <img class="swiper-slide__go" src="blocks/brands/img/go.png" alt="">
                                         </a>
                                     </li>
                                     <li class="swiper-slide swiper-slide--brands hidden-1120px">
                                         <a class="swiper-slide__link swiper-slide__link--brands" href="">
-                                            <img class="swiper-slide__logo" src="img/brands/apple-logo.png" alt="">
-                                            <img class="swiper-slide__go" src="img/brands/go.png" alt="">
+                                            <img class="swiper-slide__logo" src="blocks/brands/img/apple-logo.png" alt="">
+                                            <img class="swiper-slide__go" src="blocks/brands/img/go.png" alt="">
                                         </a>
                                     </li>
                                 </ul>
                                 <div class="swiper-pagination"></div>
                             </div>
                 
-                            <button class="show-more-button">Показать все</button>
+                            <button class="expand-button">Показать все</button>
                         </div>
                     </section>
                     
@@ -321,37 +335,37 @@
                                     <li class="swiper-slide swiper-slide--devices">
                                         <a class="swiper-slide__link swiper-slide__link--devices" href="">
                                             <span class="swiper-slide__device-name">Ремонт ноутбуков</span>
-                                            <img class="swiper-slide__go" src="/img/brands/go.png" alt="">
+                                            <img class="swiper-slide__go" src="blocks/devices/img/go.png" alt="">
                                         </a>
                                     </li>
                                     <li class="swiper-slide swiper-slide--devices">
                                         <a class="swiper-slide__link swiper-slide__link--devices" href="">
                                             <span class="swiper-slide__device-name">Ремонт планшетов</span>
-                                            <img class="swiper-slide__go" src="/img/brands/go.png" alt="">
+                                            <img class="swiper-slide__go" src="blocks/devices/img/go.png" alt="">
                                         </a>
                                     </li>
                                     <li class="swiper-slide swiper-slide--devices">
                                         <a class="swiper-slide__link swiper-slide__link--devices" href="">
                                             <span class="swiper-slide__device-name">Ремонт ПК</span>
-                                            <img class="swiper-slide__go" src="/img/brands/go.png" alt="">
+                                            <img class="swiper-slide__go" src="blocks/devices/img/go.png" alt="">
                                         </a>
                                     </li>
                                     <li class="swiper-slide swiper-slide--devices hidden-768px">
                                         <a class="swiper-slide__link swiper-slide__link--devices" href="">
                                             <span class="swiper-slide__device-name">Ремонт мониторов</span>
-                                            <img class="swiper-slide__go" src="/img/brands/go.png" alt="">
+                                            <img class="swiper-slide__go" src="blocks/devices/img/go.png" alt="">
                                         </a>
                                     </li>
                                     <li class="swiper-slide swiper-slide--devices hidden-1120px">
                                         <a class="swiper-slide__link swiper-slide__link--devices" href="">
                                             <span class="swiper-slide__device-name">Ремонт ноутбуков</span>
-                                            <img class="swiper-slide__go" src="/img/brands/go.png" alt="">
+                                            <img class="swiper-slide__go" src="blocks/devices/img/go.png" alt="">
                                         </a>
                                     </li>
                                 </ul>
                                 <div class="swiper-pagination"></div>
                             </div>
-                            <button class="show-more-button show-more-button--devices ">Показать все</button>
+                            <button class="expand-button expand-button--devices ">Показать все</button>
                         </div>
                     </section>
     

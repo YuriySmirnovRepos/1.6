@@ -1,0 +1,31 @@
+/* Блок секция для секций после hero */
+.section {
+    min-width: 320px;
+    max-width:1120px;
+    max-height: min-content;
+    margin-left:auto;
+    width: 100vw;
+    background-color: #f8f8f8;
+    overflow:hidden;
+    position:relative;
+    overflow-y: hidden;
+
+    .section__container {
+        position:relative;
+        padding: 16px;
+    }
+
+    .section__title {
+        display: inline-block;
+        width:100%;
+    
+        margin:0;
+        padding:16px;
+        background: linear-gradient(45grad, #f8f8f8, #ffffff);
+        border-top:1px solid #d9fff5;
+        text-transform: uppercase;
+        font-size: 16px;
+        font-weight: 400;
+        color:#7e7e82;
+    }
+}

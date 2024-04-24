@@ -1,0 +1,148 @@
+/* Секция 'Цены на услуги' */
+.services {
+
+    .section__container {
+        padding: 31px 24px 47px 24px;
+    }
+
+    .swiper-services {
+        font-size: 14px;
+        line-height: 18px;
+        letter-spacing: 0.2px;
+    }
+    
+    .swiper-services__caption {
+        display:none;
+    }
+    
+    .swiper-slide__title
+    {
+        color:#7E7E82;
+        margin-top: 16px;;
+    }
+    
+    .swiper-slide__title:first-of-type {
+        margin-top: 0;
+    }
+    
+    .swiper-slide__link--services {
+        width: 119px;
+        height: 32px;
+        background: url('img/buy.png') no-repeat;
+        position: absolute;
+        right: 16px;
+        bottom: 16px;
+    }
+    
+    
+    .swiper-slide--services {
+        display: block;
+        width: 260px;
+        height: 200px;
+        padding: 16px;
+    }
+    
+    .services__disclaimer {
+        font-size: 14px;
+        margin-top: 20px;
+        margin-bottom: 16px;
+        max-width: 421px;
+    }
+    
+    .services__link {
+        font-family: 'TT Lakes Medium';
+        display: inline-block;
+    }
+    
+    .services__link::after{
+        content: '';
+        background: url('img/line.svg') no-repeat;
+        width: 11px;
+        height: 11px;
+        display: inline-block;
+        margin-left: 6px;
+        transition: 0.5s ease-out;
+    }
+
+    .services__link:hover::after {
+        transform: translateX(5px);
+    }
+
+    @media screen and (min-width: 560px) {
+    
+        .swiper-slide__title {display: none;}
+    
+        .swiper-services__caption {
+            display: flex;
+            flex-direction: row;
+            width:100%;
+            justify-content: space-between;
+        }
+    
+        .swiper-wrapper--services {
+            display: flex;
+            flex-direction: column;
+            background-color: white;
+            border-radius: 5px;
+            transform: none !important;
+        }
+    
+        .swiper-slide--services {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+    
+            width: auto;
+            height: 64px;
+    
+            border: none;
+            border-bottom: 1px #eaeaea solid;
+            border-radius: 0;
+    
+            text-align: left;
+    
+            padding-left: 0;
+            padding-right: 0;
+            margin-left: 16px;
+            margin-right: 16px;
+        }
+    
+        .swiper-slide--services:last-of-type{
+            border-bottom: none;
+        }
+    
+        .swiper-slide__service,
+        .swiper-services__caption-service {
+            width: 50%;
+            flex-shrink: 1;
+        }
+    
+        .swiper-slide__price,
+        .swiper-services__caption-price {
+            width: max(10%, 72px);
+        }
+    
+        .swiper-slide__duration,
+        .swiper-services__caption-duration {
+            width: 12%;
+            text-align: left;
+        }
+    
+        .swiper-services__caption {
+            padding:0 16px 16px 16px;
+            align-items: flex-end;
+            color:#7e7e82;
+        }
+    
+        .swiper-services__caption-filler {
+            width: 119px;
+            height: 32px;
+        }
+        
+    
+        .swiper-slide__link--services {
+            position: static;
+        }
+    }
+}
