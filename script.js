@@ -7,57 +7,12 @@ new Swiper(".swiper", {
       clickable: true,
     },
     breakpoints: {
-        400: {
+        600: {
             enabled: false,
             spaceBetween:0
         }
     }
 });
-// const brandsSwiper = new Swiper(".swiper-brands", {
-//     slidesPerView: "auto",
-//     spaceBetween: 16,
-//     pagination: {
-//       el: ".swiper-pagination",
-//       clickable: true,
-//     },
-//     breakpoints: {
-//         400: {
-//             enabled: false,
-//             spaceBetween:0
-//         }
-//     }
-// });
-
-// const devicesSwiper = new Swiper(".swiper-devices", {
-//     slidesPerView: "auto",
-//     spaceBetween: 16,
-//     pagination: {
-//       el: ".swiper-pagination",
-//       clickable: true,
-//     },
-//     breakpoints: {
-//         540: {
-//             enabled: false,
-//             spaceBetween:0
-//         }
-//     }
-// });
-
-// const pricesSwiper = new Swiper(".swiper-services", {
-//     slidesPerView: "auto",
-//     spaceBetween: 16,
-//     pagination: {
-//       el: ".swiper-pagination",
-//       clickable: true,
-//     },
-//     breakpoints: {
-//         560: {
-//             enabled: false,
-//             spaceBetween:0
-//         }
-//     }
-// });
-// #endregion
 
 const btnBurger = document.querySelector('.round-button--burger');
 const btnCloseAsideMenu = document.querySelector('.btn-close');

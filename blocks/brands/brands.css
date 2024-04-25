@@ -2,107 +2,26 @@
 .brands {    
     min-height: 220px;
 
-    .brands__list {
-        display: flex;
-        flex-direction: row;
-        gap:16px;    
-        margin: 16px;
-    }
-    
-    .brands__item {
-        height: 72px;
-        background-color: #ffffff;
-        border: 1px solid #eaeaea;
-        border-radius: 6px;
+    .brands__my-swiper {
+        margin-bottom: 24px;
     }
 
-    .swiper-slide__link--brands {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        padding-left: 16px;
-        padding-right: 16px;
-        width: 240px;
+    .expand-button {
+        display: none;
     }
     
-    .swiper-brands:after,
-    .swiper-brands:before {
-        content: '';
-        width:35px;
-        height: 70px;
-        position:absolute;
-        background: linear-gradient(90grad, transparent, white);
-        right:-2px;
-        top:17px;
-        z-index: 1;
-        filter:blur(2px);
-    }
-    
-    .swiper-brands:before {
-        width: 24px;
-        top: 15px;
-        left: -1px;
-        z-index: 2;
-        background: linear-gradient(270deg, transparent, white);
-    }
-    
-    .swiper-slide--brands {
-        justify-content: center;
-        align-items: center;
-    
-        width: 240px;
-        height: 72px;
-    }
-    
-    @media screen and (min-width: 400px){
+    @media screen and (min-width: 600px){
+
+        & .section__container {
+            min-height: 288px;
+        }
+
         .brands__title {
             height: 56px;
         }
-    
-        .brands__my-swiper {
-            padding:0;
-        }
 
-        /*** Переключение свайпера на обычный флекс переопределением стилей wrapper-а. Также, пришлось переопределить инлайновый transform здесь. */
-        .swiper-wrapper--brands,
-        .swiper-wrapper--devices {
-            display: flex;
-            flex-wrap: wrap;
-            transform: unset !important;
-        }
-
-        .swiper {
-            height: unset;
-        }
-
-        .brands__my-swiper:after {
-            display:none;
-        }
-    
-        .brands__my-swiper:before {
-            display:none;
-        }
-    
-        .show-more-button {
-            display: block;
-        }
-    }
-
-    @media screen and (min-width: 400px) and (max-width:1119px) {
-
-        .swiper-wrapper--brands {
-            gap: 16px 24px;
-        }
-    
-        .swiper-slide--brands {
-            width: 224px;
-        }
-    }
-
-    @media screen and (min-width: 1120px) {
-        .swiper-wrapper--brands {
-            gap: 16px 32px;
+        .expand-button {
+            display:unset;
         }
     }
 }

@@ -32,16 +32,6 @@
         font-family: 'TT Lakes Medium';
     }
     
-    /* .hero__action--check:after {
-        content: '';
-        position: absolute;
-        width: 40px;
-        height: 40px;
-        top:0;
-        right:-49px;
-        background: url('img/header/checkstatus.svg');
-    } */
-    
     .hero__title
     {
         margin:25px 0;
@@ -120,6 +110,10 @@
         line-height: 18px;
         letter-spacing: 0.2px;
 
+        .hero__expand-button {
+            margin-top: 16px;
+        }
+
         .hero__768-txt-part {
             display: none;
         }
@@ -129,29 +123,6 @@
         }
     }
     
-    /* .hero__read-more {
-        display: block;
-        margin-top:16px;
-        padding: 0;
-    
-        height:24px;
-        border:none;
-        background-color: inherit;
-        font-family: 'TT Lakes Medium';
-        font-size: 16px;
-        cursor: pointer;
-    } */
-
-/*     
-    .hero__read-more::before
-    {
-        content:url("img/hero/icon.svg");
-        display: inline-block;
-        width:24px;
-        height: 24px;
-        margin-right: 8px;
-        cursor: pointer;
-    } */
 
     @media screen and (min-width: 650px) {
         .hero__about-container {
@@ -193,6 +164,10 @@
         {
             padding-left: 24px;
             margin-bottom:32px;
+        }
+
+        .hero__expand-button {
+            margin-top: 10px;
         }
 
         .hero__about-container {

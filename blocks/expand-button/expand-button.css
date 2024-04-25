@@ -1,8 +1,8 @@
-/* Блок - кнопка показать все*/
+/* Читать далее и Показать все*/
 .expand-button {
     position: relative;
     display: block;
-    padding: 24px 0 0 24px;
+    padding-left:24px;
     font-family: 'TT Lakes Medium';
     font-size: 16px;
     color:#1B1C21;
@@ -12,8 +12,8 @@
         position:absolute;
         width: 24px;
         height: 24px;
-        left:-8px;
-        top: 22px;
+        left:-5px;
+        top:-1px;
         background: url('img/expand.svg') no-repeat center;
     }
 
@@ -21,14 +21,4 @@
         rotate: 180deg;
     }
 
-    @media screen and (max-width:400px) {
-        display: none;
-    }
-
-    /* Разные брэйкпоинты у разных свайперов */
-    &.expand-button--devices{
-        @media screen and (max-width:560px) {
-            display: none;
-        }
-    }
 }
