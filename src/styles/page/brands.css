@@ -1,0 +1,22 @@
+/* Секция 'Ремонт техники различных брендов' */
+.brands {    
+
+    .brands__my-swiper {
+        margin-bottom: 24px;
+    }
+
+    .expand-button {
+        display: none;
+    }
+    
+    @media screen and (min-width: 600px){
+
+        .brands__title {
+            height: 56px;
+        }
+
+        .expand-button {
+            display:unset;
+        }
+    }
+}

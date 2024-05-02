@@ -1,0 +1,304 @@
+@import url("https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css");
+
+:root {
+    --swiper-pagination-bullet-width: 12px;
+    --swiper-pagination-bullet-height: 12px;
+    --swiper-pagination-color: #979797;
+    --swiper-pagination-bullet-horizontal-gap:6px;
+    --swiper-pagination-top:12px;
+}
+
+.swiper-slide {
+    background: #fff;
+    display: flex;
+    border-radius: 10px;
+    border: 1px solid #eaeaea;
+}
+
+.swiper-pagination {
+    position:relative;
+}
+
+.swiper {
+    overflow: unset;
+    &::before,
+    &::after {
+        width:24px;
+        content: '';
+        position:absolute;
+        z-index: 1;
+        filter:blur(2px);
+        height: 100%;
+
+        @media screen and (min-width:600px) {
+            display: none;
+        }
+    }
+
+    &.swiper--brands {
+
+        &::before {
+            width:35px;
+            background: linear-gradient(300grad, transparent, white);
+            top:0;
+            left: -16px;
+            z-index: 2;
+        }
+
+        &:after {
+            width:35px;
+            background: linear-gradient(90grad, transparent, white);
+            right: -16px;
+            top:0;
+        }
+    }
+
+    &.swiper--devices {
+
+        &::before {
+            width:24px;
+            height: 100%;
+            background: linear-gradient(300grad, transparent, white);
+            top:0;
+            left: -16px;
+            z-index: 2;
+        }
+
+        &:after {
+            width:24px;
+            background: linear-gradient(90grad, transparent, white);
+            right: -16px;
+            top:0;
+        }
+    }
+    
+    &.swiper--services{
+        font-size: 14px;
+        line-height: 18px;
+        letter-spacing: 0.2px;
+
+        &::before {
+            width:35px;
+            background: linear-gradient(300grad, transparent, white);
+            top:0;
+            left: -24px;
+            z-index: 2;
+        }
+
+        &:after {
+            width:35px;
+            background: linear-gradient(90grad, transparent, white);
+            right: -24px;
+            top:0;
+        }
+    }
+
+    .swiper-caption {
+        display:none;
+
+        @media screen and (min-width:600px) {
+            display: flex;
+            flex-direction: row;
+            width:100%;
+            justify-content: space-between;
+            padding:0 16px 16px 16px;
+            align-items: flex-end;
+            color:#7e7e82;
+
+            .swiper-caption__service {
+                width: 50%;
+                flex-shrink: 1;
+            }
+
+            .swiper-caption__price {
+                width: max(10%, 72px);
+            }
+
+            .swiper-caption__duration {
+                width: 12%;
+                text-align: left;
+            }
+
+            .swiper-caption__filler {
+                width: 119px;
+                height: 32px;
+            }
+        }
+    }
+
+    .swiper-wrapper {
+
+        &.swiper-wrapper--brands,
+        &.swiper-wrapper--devices {
+            /*** Переключение свайпера на обычный флекс переопределением стилей wrapper-а. Также, пришлось переопределить инлайновый transform здесь. */
+            @media screen and (min-width: 600px) {
+                display: flex;
+                flex-wrap: wrap;
+                transform: unset !important;
+                gap:16px 24px;
+            }
+
+            @media screen and (min-width:1120px) {
+                gap: 16px 32px;
+            } 
+        }
+
+        &.swiper-wrapper--services {
+            @media screen and (min-width: 600px) {
+                display: flex;
+                flex-direction: column;
+                background-color: white;
+                border-radius: 5px;
+                transform: none !important;
+            }
+        }
+    }
+
+    .swiper-slide {
+
+        .swiper-slide__link {
+
+            &.swiper-slide__link--brands {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                padding-left: 16px;
+                padding-right: 16px;
+                width: 240px;
+                @media screen and (min-width:768px) and (max-width: 1120px) {
+                    width: 224px;
+                }
+            }
+
+            &.swiper-slide__link--devices {
+                display: flex;
+                width:100%;
+                justify-content: space-between;
+            }
+
+            &.swiper-slide__link--services {
+                width: 119px;
+                height: 32px;
+                background: url('../../assets/img/services/buy.svg') no-repeat;
+                position: absolute;
+                right: 16px;
+                bottom: 16px;
+                @media  screen and (min-width:600px) {
+                    position: static;
+                }
+            }
+        }
+        
+        .swiper-slide__go {
+            align-self: flex-end;
+            margin-right:16px;
+            margin-bottom: 16px;
+        }
+
+        .swiper-slide__device-name {
+            font-family: 'TT Lakes Medium';
+            text-wrap: nowrap;
+            padding-top: 16px;
+            padding-left: 16px;
+            align-self: flex-start;
+        }
+
+        .swiper-slide__title
+        {
+            color:#7E7E82;
+            margin-top: 16px;;
+            
+            &:first-of-type {
+                margin-top: 0;
+            }
+
+            @media screen and (min-width: 600px) {
+                display: none;
+            }
+        }
+
+        .swiper-slide__service {
+            @media screen and (min-width: 600px) {
+                width: 50%;
+                flex-shrink: 1;
+            }
+        }
+
+        .swiper-slide__price {
+            @media screen and (min-width:600px) {
+                width: max(10%, 72px);
+            }
+        }
+
+        .swiper-slide__duration {
+            @media screen and (min-width:600px) {
+                width: 12%;
+                text-align: left;
+            }
+        }
+
+
+        &.swiper-slide--brands {
+            justify-content: center;
+            align-items: center;
+        
+            width: 240px;
+            height: 72px;
+
+            @media screen and (min-width:600px) and (max-width:1120px){
+                width: 224px;
+            }
+        }
+
+        &.swiper-slide--devices {
+            width: 240px;
+            height: 160px;
+            @media screen and (min-width:768px) and (max-width:1119px) {
+                width:224px;
+            }
+        }
+
+        &.swiper-slide--services{
+            display: block;
+            width: 260px;
+            height: 200px;
+            padding: 16px;
+
+            @media screen and (min-width:600px) {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+        
+                width: auto;
+                height: 64px;
+        
+                border: none;
+                border-bottom: 1px #eaeaea solid;
+                border-radius: 0;
+        
+                text-align: left;
+        
+                padding-left: 0;
+                padding-right: 0;
+                margin-left: 16px;
+                margin-right: 16px;
+
+                &:last-of-type {
+                    border-bottom:none;
+                }
+            }
+        }
+        
+    }
+
+    @media screen and (min-width: 600px) {
+        height: unset;
+
+        &::before,
+        &::after {
+            display: none;
+        }
+    }
+}

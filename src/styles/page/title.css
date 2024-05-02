@@ -1,0 +1,20 @@
+/* Блок title для hero и модалок*/
+.title {
+    width: min-content;
+    display: block;
+    font-size: 28px;
+    padding-left: 16px;
+    margin:25px 0;
+    letter-spacing: -0.6px;
+    white-space: nowrap;
+
+    &::before
+    {
+        content: "";
+        position: absolute;
+        left:0px;
+        width: 4px;
+        height: 40px;
+        background: url('../../assets/img/title/highlight.svg');
+    }
+}

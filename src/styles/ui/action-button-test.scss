@@ -1,0 +1,80 @@
+/* Блок с круглыми кнопками */
+.action-button {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    cursor: pointer;
+    border:none;
+    padding: 0;
+    margin: 0;
+    transition: 0.1s ease-in;
+
+    &.action-button--transition-scale:hover,
+    &.action-button--repair-with-text:hover::after,
+    &.action-button--checkstatus-with-text:hover::after {
+        transform:scale(1.2);
+    }
+
+    &.action-button--burger {
+        background-image: url('../assets/img/action-button/burger.svg');
+    }
+
+    &.action-button--call {
+        background-image: url('../assets/img/action-button/call.svg');
+    }
+
+    &.action-button--search {
+        background-image: url("../assets/img/action-button/search.svg");
+    }
+
+    &.action-button--chat {
+        background-image: url("../assets/img/action-button/chat.svg");
+    }
+
+    &.action-button--profile {
+        background-image: url('../assets/img/action-button/profile.svg');
+    }
+
+    &.action-button--repair {
+        background-image: url('../assets/img/action-button/repair.svg');
+    }
+
+    &.action-button--repair-with-text {
+        width:auto;
+    }
+
+    &.action-button--repair-with-text::after {
+        content: '';
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        top:0;
+        right:-49px;
+        background-image: url('../assets/img/action-button/repair.svg');
+        transition: 0.1s ease-in;
+    }
+
+    &.action-button--checkstatus {
+        background-image: url("../assets/img/action-button/checkstatus.svg");
+    }
+
+    &.action-button--checkstatus-with-text {
+        width: auto;
+    }
+
+    &.action-button--checkstatus-with-text::after {
+        content: '';
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        top:0;
+        right:-49px;
+        background-image: url('../assets/img/action-button/checkstatus.svg');
+        transition: 0.1s ease-in;
+    }
+
+    &.action-button--close {
+        background-image: url("../assets/img/action-button/close.svg");
+    }
+}

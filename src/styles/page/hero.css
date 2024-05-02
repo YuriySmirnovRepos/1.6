@@ -1,0 +1,219 @@
+/* Секция 'Услуги и сервисы, вводная секция' */
+.hero {
+    .hero__container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1082px;
+    }
+    
+    .hero__actions {
+        width: min-content;
+        text-wrap: nowrap;
+        list-style: none;
+        display:none;
+    }
+    
+    .hero__item {
+        position:relative;
+        margin-right: 48px;
+    }
+    
+    .hero__item:nth-of-type(2){
+        margin-left:32px;
+    }
+    
+    .hero__action {
+        height: 40px;
+        background-color: #f8f8f8;
+        color:#1b1c21;
+        font-size: 16px;
+        font-family: 'TT Lakes Medium';
+    }
+    
+    .hero__title
+    {
+        margin:25px 0;
+    }
+    
+    .slide-menu {
+        max-width: 1120px;
+    
+        &::after,
+        &::before
+        {
+            content:'';
+            position:absolute;
+            height:40px;
+            width:16px;
+        }
+        
+        &::after
+        {
+            right:0;
+            top:89px;
+            background: linear-gradient(270deg, #F8F8F8 16.84%, rgba(248,248,248, 0.0001));
+        }
+        
+        &::before
+        {
+            left:0;
+            background: linear-gradient(90deg, #F8F8F8 16.84%, rgba(248,248,248, 0.0001));
+        }
+        
+        .slide-menu__items {
+            overflow-x: auto;
+            display: flex;
+            list-style: none;
+            padding-left:16px;
+            padding-right:16px;
+        }
+        
+        .slide-menu__item {
+            text-wrap: nowrap;
+            height:40px;
+            border:none;
+            padding: 8px 0.6em;
+            background: inherit;
+        }
+        
+        .slide-menu__link {
+            font-family: inherit;
+            font-size: 16px;
+            letter-spacing: 0.2px;
+            color: #7e7e7e;
+            vertical-align: middle;
+        }
+        
+        .slide-menu__item:hover {
+            background: white;
+            border: 2px solid #B8FFEC;
+            border-radius: 6px;
+            padding: 6px calc(0.6em - 2px);
+        }
+    }
+    
+
+    .hero__about-container {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 24px;
+        min-width:320px;
+        max-width: 1120px;
+    }
+    
+    .hero__about {
+        margin: 0;
+        padding: 8px 16px 16px 16px;
+        font-size: 14px;
+        line-height: 18px;
+        letter-spacing: 0.2px;
+
+        .hero__expand-button {
+            margin-top: 16px;
+        }
+
+        .hero__768-txt-part {
+            display: none;
+        }
+
+        .hero__1120-txt-part {
+            display: none;
+        }
+    }
+    
+
+    @media screen and (min-width: 650px) {
+        .hero__about-container {
+            margin-bottom: 32px;
+            flex-direction: row;  
+            justify-content: space-between;
+            padding-left:24px;
+            padding-right: 24px;
+            padding-top: 16px;    
+            gap:10px;
+        }
+    
+        .hero__about {
+            width: 312px;
+            padding:0;
+            line-height:20px;
+        }
+    
+        .hero__about .hero__768-txt-part {
+            display: inline;
+        }
+    
+        .hero__pic {
+            height: 208px;
+            width: 360px;
+            border-radius: 5px;
+        }
+    }
+
+    @media screen and (min-width: 900px){
+        .hero__pic {
+            height: 307px;
+            width: 531px;
+        }
+    }
+
+    @media screen and (min-width:768px){
+        .hero__title
+        {
+            padding-left: 24px;
+            margin-bottom:32px;
+        }
+
+        .hero__expand-button {
+            margin-top: 10px;
+        }
+
+        .hero__about-container {
+            padding-left:35px;
+            padding-right:35px;
+        }
+    }
+
+    @media screen and (min-width:1000px) {
+        .hero__about .hero__1120-txt-part {
+            display: inline;
+        }
+    }
+
+    @media  screen and (min-width:1440px) {
+
+        .hero__about {
+            width: 490px;
+        }
+    
+        .hero__actions {
+            display: flex;
+            margin-top: 40px;
+        }
+    
+        .slide-menu {
+            overflow-x: hidden;
+            margin-left:18px;
+        }
+    
+        .slide-menu__items {
+            flex-wrap: wrap;
+        }
+    
+    
+        .hero__title
+        {
+            padding-left:33px;
+            margin-top:42px;
+            margin-bottom: 8px;
+        }
+    
+        .hero__about-container {
+            padding-left:35px;
+            padding-right:35px;
+            margin-bottom: 51px;
+        }
+    }
+}
