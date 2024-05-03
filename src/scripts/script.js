@@ -1,4 +1,22 @@
-//#region Кнопки и модальные окна с боковым меню
+import '../styles/style.scss' assert {type: 'css'};
+import Swiper from '../../node_modules/swiper/swiper-bundle.min.mjs';
+
+new Swiper(".swiper", {
+    slidesPerView: "auto",
+    spaceBetween: 16,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    breakpoints: {
+        600: {
+            enabled: false,
+            spaceBetween:0
+        }
+    }
+});
+
+//#region Buttons and modals
 const headerWrapper = {
     obj  : document.querySelector('.header'),
     btns : {
@@ -30,6 +48,13 @@ const modalFeedbackWrappper = {
 }
 
 let toggleModalCaller = toggleModal();
+
+/**
+ * Toggles the modal's visibility.
+ *
+ * @param {Element} element - The element representing the modal to be toggled.
+ * @return {void} This function does not return anything.
+ */
 function toggleModal () {
     const mainWrapper = document.querySelector('.main-wrapper');
     const page = document.querySelector('.page');
@@ -40,6 +65,10 @@ function toggleModal () {
     }
 }
 
+/**
+ * Handles the click event on the window to close a modal when the user clicks outside of it.
+ * @param {MouseEvent} event - The click event object.
+ */
 window.onclick = (event) => {
     const modals = document.querySelectorAll('.modal.show, .aside-menu.show');
     if (!modals.length || event.target === headerWrapper.btns.burger
@@ -66,25 +95,46 @@ window.onclick = (event) => {
 
 //#endregion
 
-//#region Работа с кнопкой "Читать далее"
+//#region Read more button
 let currentViewportWidth = window.visualViewport.width;
+
 const btnReadMore = document.querySelector('.hero .expand-button');
+
 const [heroTxt768pxPart, heroTxt1120pxPart] =  document.querySelectorAll('.hero__1120-txt-part, .hero__768-txt-part');
 
+/**
+ * Handles the resize event and updates the state of the "Read More" button.
+ *
+ * @return {void} This function does not return anything.
+ */
 function handleResize() {
     checkReadMoreBtnState();
     currentViewportWidth = window.visualViewport.width;
-    //Чистим инлайн стили для корректной работы медиа запросов
+    
+    // Remove the 'style' attribute from text parts to media queries works fine
     [heroTxt768pxPart, heroTxt1120pxPart].forEach(el => el.removeAttribute('style'));
 }
 window.addEventListener('resize', handleResize);
 
+/**
+ * Toggles the visibility of an element by changing its display property
+ * via inline styles.
+ *
+ * @param {Element} el - The element to toggle visibility for.
+ * @param {string} newDisplayVal - The new display value to set.
+ * @return {void} This function does not return anything.
+ */
 function toggleVisibility(el, newDisplayVal) {
     el.style.display = 
         el.style.display === '' || el.style.display === 'none' ? 
         newDisplayVal : 'none';
 }
 
+/**
+ * Checks the state of the "Read More" button, rotates its pseudo-element and updates text content.
+ *
+ * @return {void} This function does not return anything.
+ */
 function checkReadMoreBtnState() {
     const isAllTxtInHeroIsVisible = heroTxt1120pxPart.checkVisibility();
     if (isAllTxtInHeroIsVisible) {
@@ -96,8 +146,12 @@ function checkReadMoreBtnState() {
     }
 }
 
-// Если теперь кнопка в состоянии Читать далее, вернуть true. 
-// Если Скрыть, вернуть -- false
+/**
+ * Toggles the expand button state and updates its text content.
+ *
+ * @param {HTMLElement} button - The expand button element.
+ * @return {boolean} Returns true if the button is now in the collapsed state, false otherwise.
+ */
 function toggleExpandBtn(button) {
     let isFromHeroSection = button.classList.contains('hero__expand-button');
     if (button.classList.toggle('expand-button--rotated')){
@@ -110,7 +164,10 @@ function toggleExpandBtn(button) {
     }
 }
 
+//Check initial state of the button 'Read more' when the page is loaded
 checkReadMoreBtnState();
+
+
 btnReadMore.onclick = () => {
     if (toggleExpandBtn(btnReadMore)){
         // Скрыть в любом случае фрагмент для 1120px
@@ -135,7 +192,7 @@ btnReadMore.onclick = () => {
 
 //#endregion
 
-//#region Работа с секциями "Бренды" и "Устройства"
+//#region  Sections with swiper
 const brandsSectionWrapper = {
     obj: document.querySelector('.brands'),
     plates : document.querySelectorAll('.swiper-slide--brands.hidden-768px, .swiper-slide--brands.hidden-1120px'),
@@ -151,6 +208,12 @@ const devicesSectionWrapper = {
 brandsSectionWrapper.btn.onclick = (evt) => toggleVisibilityPlates(evt);
 devicesSectionWrapper.btn.onclick = (evt) => toggleVisibilityPlates(evt);
 
+/**
+ * Toggles the visibility of plates based on the given event.
+ *
+ * @param {PointerEvent} [e=PointerEvent] - The event that triggered the function.
+ * @return {undefined} This function does not return a value.
+ */
 function toggleVisibilityPlates(e = PointerEvent) {
 
     let isBrandsSection = e.target === brandsSectionWrapper.btn;
@@ -161,8 +224,7 @@ function toggleVisibilityPlates(e = PointerEvent) {
     let isPlateHidden768px = false
     let isToggleOnly1120pxPlates = currentViewportWidth > 1120;
 
-    currentSectionPlates.forEach(el => {
-        // isPlateVisible = el.checkVisibility();
+    currentSectionPlates.forEach(el => {    
         isPlateHidden1120px = el.classList.contains('hidden-1120px');
         isPlateHidden768px = !isPlateHidden1120px;
 
@@ -171,6 +233,5 @@ function toggleVisibilityPlates(e = PointerEvent) {
         toggleVisibility(el, isNeedToHidePlates ? 'none' : 'flex');
 
     })
-
 }
 //#endregion

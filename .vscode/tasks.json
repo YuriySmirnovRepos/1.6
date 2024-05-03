@@ -4,9 +4,40 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "SCSS compile",
             "type": "shell",
-            "command": "sass styles.scss styles.css",
+            "label": "npm: dev",
+            "command": "cross-env NODE_ENV=development webpack --mode development",
+            "group": "build"
+        },
+        {
+            "type": "shell",
+            "label": "npm: watch",
+            "command": "cross-env NODE_ENV=development webpack --mode development --watch",
+            "group": "build"
+        },
+        {
+            "type": "shell",
+            "label": "npm: web-pack-server",
+            "command": "cross-env NODE_ENV=development webpack-dev-server --mode development --open",
+            "group": "build"
+        },
+        {
+            "label": "SCSS compile watch file",
+            "type": "shell",
+            "command": "sass --watch ${fileDirname}\\${fileBasenameNoExtension}.scss:${fileDirname}\\${fileBasenameNoExtension}.css",
+            "group": "build"
+        },
+        {
+            "type": "npm",
+            "script": "build",
+            "group": "build",
+            "label": "npm: build",
+            "detail": "webpack --mode production"
+        },
+        {
+            "label": "SCSS compile file",
+            "type": "shell",
+            "command": "sass ${fileDirname}\\${fileBasenameNoExtension}.scss ${fileDirname}\\${fileBasenameNoExtension}.css",
             "group": "build"
         }
     ]
