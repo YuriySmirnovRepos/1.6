@@ -1,8 +1,9 @@
+@use '../utils/vars.scss' as *;
 /* Блок title для hero и модалок*/
 .title {
     width: min-content;
     display: block;
-    font-size: 28px;
+    font-size: $font-size-large;
     padding-left: 16px;
     margin:25px 0;
     letter-spacing: -0.6px;

@@ -1,3 +1,5 @@
+@use '../utils/vars.scss' as *;
+
 .aside-menu
 {
     display: none;
@@ -13,17 +15,17 @@
     background-color: white;
 
     box-shadow: -2px 0px 4px 
-    rgba(69, 79, 126, 0.02), 
+    rgba(69, 79, 126, 0.02),
     16px 0px 52px 
     rgba(14, 24, 80, 0.2);
 
-    @media screen and (min-width:1440px) {
+    @media screen and (min-width:$breakpoint-desktop-large) {
         display: flex;
         position: static;
         box-shadow: none;
         width:306px;
     
-        & .action-button--close {
+        .action-button--close {
             display: none;
         }
     }
@@ -35,11 +37,12 @@
         margin-bottom:50.27px;
         margin-top: 18.73px;
 
-        @media screen and (max-width:768px) {
+        @media screen and (max-width:$breakpoint-tablet) {
             margin-bottom: 21px;
         }
 
-        @media screen and (min-width: 1440px) {
+
+        @media screen and (min-width:calc($breakpoint-tablet + 1px)) {
             margin-top: 35px;
             margin-bottom: 43px;
         }
@@ -56,7 +59,7 @@
         padding:0;
         margin:0;
 
-        @media screen and (min-width: 1440px){
+        @media screen and ($breakpoint-desktop-large){
             gap:0;
             justify-content: space-between;
         }
@@ -68,6 +71,7 @@
             height: 51px;
             background-image: url('../../assets/img/aside-menu/logo.svg');
             background-color: transparent;
+            vertical-align: middle;
         }
         
         & .aside-header__item:last-of-type
@@ -90,7 +94,7 @@
 
         & .nav-list__item 
         {
-            font-size: 16px;
+            font-size: $font-size-default;
             font-style: normal;
             font-weight: 500;
             margin-bottom: 32px;
@@ -104,7 +108,7 @@
             
             & .nav-list__link:hover
             {
-                color: #7E7E82;
+                color: $text-hover-color-gray;
             }
             
             &:hover::before 
@@ -124,7 +128,7 @@
     {
         margin-top:auto;
 
-        @media screen  and (min-width:1440px){
+        @media screen  and (min-width:$breakpoint-desktop-large){
             margin-top: 241px;
         }
 
@@ -147,13 +151,13 @@
         {
             margin-top: 16px;
             margin-bottom:12px;
-            font-size: 16px;
+            font-size: $font-size-default;
         }
         
         & .aside-footer__phone
         {
             display:block;
-            font-size: 24px;
+            font-size: $font-size-medium;
             font-weight: 700;
             line-height: 32px;
             letter-spacing: -0.6px;
@@ -178,7 +182,7 @@
 
                 &:hover 
                 {
-                    color: #7E7E82;
+                    color: $text-hover-color-gray;
                     cursor: pointer;
                 }
             }

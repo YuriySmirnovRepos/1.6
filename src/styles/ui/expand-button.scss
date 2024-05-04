@@ -1,11 +1,12 @@
+@use '../utils/vars.scss' as *;
 /* Читать далее и Показать все*/
 .expand-button {
     position: relative;
     display: block;
     padding-left:24px;
     font-family: 'TT Lakes Medium';
-    font-size: 16px;
-    color:#1B1C21;
+    font-size: $font-size-default;
+    color:$text-color;
 
     &::before {
         content:'';

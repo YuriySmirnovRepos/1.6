@@ -1,3 +1,4 @@
+@use '../utils/vars.scss' as *;
 /* Блок секция для секций после hero */
 .section {
     min-width: 320px;
@@ -5,7 +6,7 @@
     max-height: min-content;
     margin-left:auto;
     width: 100vw;
-    background-color: #f8f8f8;
+    background-color: $main-background-color;
     overflow:hidden;
     position:relative;
     overflow-y: hidden;
@@ -21,11 +22,11 @@
     
         margin:0;
         padding:16px;
-        background: linear-gradient(45grad, #f8f8f8, #ffffff);
+        background: linear-gradient(45grad, $main-background-color, #ffffff);
         border-top:1px solid #d9fff5;
         text-transform: uppercase;
-        font-size: 16px;
+        font-size: $font-size-default;
         font-weight: 400;
-        color:#7e7e82;
+        color:$text-hover-color-gray;
     }
 }

@@ -1,4 +1,4 @@
-import '../styles/style.scss' assert {type: 'css'};
+import '../styles/style.scss';
 import Swiper from '../../node_modules/swiper/swiper-bundle.min.mjs';
 
 new Swiper(".swiper", {
@@ -29,7 +29,9 @@ const headerWrapper = {
 const asideMenuWrapper = {
     obj  : document.querySelector('.aside-menu'),
     btns : {
-        close : document.querySelector('.aside-menu .action-button--close')
+        close : document.querySelector('.aside-menu .action-button--close'),
+        call : document.querySelector('.aside-menu .action-button--call'),
+        chat : document.querySelector('.aside-menu .action-button--chat')
     }
 }
 
@@ -58,10 +60,34 @@ let toggleModalCaller = toggleModal();
 function toggleModal () {
     const mainWrapper = document.querySelector('.main-wrapper');
     const page = document.querySelector('.page');
-    return (element) => {
+
+    return (evt, element) => {
+        evt.preventDefault();
+
+        const isClickFromModalAsideMenu = evt.target.closest('.aside-menu.show') !== null;
+
         element.classList.toggle('show');
-        mainWrapper.classList.toggle('main-wrapper--transparent');
-        page.classList.toggle('page--scroll-disabled');
+
+        if (isClickFromModalAsideMenu){
+            if(evt.target.closest('.action-button--close')){
+                mainWrapper.classList.toggle('transparent');
+                page.classList.toggle('scroll-disabled');    
+            }
+            else {
+                asideMenuWrapper.obj.classList.toggle('show');
+            }
+        }
+        else {
+            mainWrapper.classList.toggle('transparent');
+            page.classList.toggle('scroll-disabled');
+
+            if (currentViewportWidth >= 1423)
+            {
+                asideMenuWrapper.obj.classList.toggle('transparent');
+                asideMenuWrapper.obj.classList.toggle('scroll-disabled');
+            }
+        }
+        evt.stopPropagation();
     }
 }
 
@@ -76,20 +102,20 @@ window.onclick = (event) => {
     let currentOpenedModal = modals.item(0);
     const isClickInside = event.target.closest('.modal.show, .aside-menu.show') === currentOpenedModal;
     if (!isClickInside){
-        toggleModalCaller(currentOpenedModal);
+        toggleModalCaller(event, currentOpenedModal);
     }
 }
 
 [headerWrapper.btns.burger, asideMenuWrapper.btns.close].forEach(
-    el => el.onclick = () => toggleModalCaller(asideMenuWrapper.obj)
+    el => el.onclick = (evt) => toggleModalCaller(evt, asideMenuWrapper.obj)
 );
 
-[headerWrapper.btns.call, modalCallWrappper.btns.close].forEach(
-    el => el.onclick = () => toggleModalCaller(modalCallWrappper.obj)
+[headerWrapper.btns.call, asideMenuWrapper.btns.call, modalCallWrappper.btns.close].forEach(
+    el => el.onclick = (evt) => toggleModalCaller(evt, modalCallWrappper.obj)
 );
 
-[headerWrapper.btns.chat, modalFeedbackWrappper.btns.close].forEach(
-    el => el.onclick = () => toggleModalCaller(modalFeedbackWrappper.obj)
+[headerWrapper.btns.chat, asideMenuWrapper.btns.chat, modalFeedbackWrappper.btns.close].forEach(
+    el => el.onclick = (evt) => toggleModalCaller(evt, modalFeedbackWrappper.obj)
 )
 
 

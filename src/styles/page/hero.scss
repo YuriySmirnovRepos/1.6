@@ -1,3 +1,4 @@
+@use '../utils/vars.scss' as *;
 /* Секция 'Услуги и сервисы, вводная секция' */
 .hero {
     .hero__container {
@@ -26,9 +27,9 @@
     
     .hero__action {
         height: 40px;
-        background-color: #f8f8f8;
-        color:#1b1c21;
-        font-size: 16px;
+        background-color: $main-background-color;
+        color:$text-color;
+        font-size: $font-size-default;
         font-family: 'TT Lakes Medium';
     }
     
@@ -53,13 +54,13 @@
         {
             right:0;
             top:89px;
-            background: linear-gradient(270deg, #F8F8F8 16.84%, rgba(248,248,248, 0.0001));
+            background: linear-gradient(270deg, $main-background-color 16.84%, rgba(248,248,248, 0.0001));
         }
         
         &::before
         {
             left:0;
-            background: linear-gradient(90deg, #F8F8F8 16.84%, rgba(248,248,248, 0.0001));
+            background: linear-gradient(90deg, $main-background-color 16.84%, rgba(248,248,248, 0.0001));
         }
         
         .slide-menu__items {
@@ -80,9 +81,9 @@
         
         .slide-menu__link {
             font-family: inherit;
-            font-size: 16px;
+            font-size: $font-size-default;
             letter-spacing: 0.2px;
-            color: #7e7e7e;
+            color: $text-and-border-gray-color;
             vertical-align: middle;
         }
         
@@ -106,7 +107,7 @@
     .hero__about {
         margin: 0;
         padding: 8px 16px 16px 16px;
-        font-size: 14px;
+        font-size: $font-size-small;
         line-height: 18px;
         letter-spacing: 0.2px;
 
@@ -124,7 +125,7 @@
     }
     
 
-    @media screen and (min-width: 650px) {
+    @media screen and (min-width: calc($breakpoint-tablet - 118px)) {
         .hero__about-container {
             margin-bottom: 32px;
             flex-direction: row;  
@@ -159,7 +160,7 @@
         }
     }
 
-    @media screen and (min-width:768px){
+    @media screen and (min-width:$breakpoint-tablet){
         .hero__title
         {
             padding-left: 24px;
@@ -182,7 +183,7 @@
         }
     }
 
-    @media  screen and (min-width:1440px) {
+    @media  screen and (min-width:$breakpoint-desktop-large) {
 
         .hero__about {
             width: 490px;

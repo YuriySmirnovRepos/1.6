@@ -1,3 +1,4 @@
+@use '../utils/vars.scss' as *;
 .modal {
 
     display: none;
@@ -47,19 +48,19 @@
         padding:12px 16px;
         margin-bottom: 16px;
         width:100%;
-        border: 1px solid #EAEAEA;
+        border: 1px solid $secondary-background-color;
         border-radius: 5px;
         transition: 0.4s ease-in;
         transition-property: border-color;
-        font-size: 16px;
+        font-size: $font-size-default;
         font-family: 'TT Lakes';
         
         &::placeholder {
-            color:#B5B6BC;
+            color:$text-placeholder-color;
         }
 
         &:hover{
-            border-color: #7e7e7e;
+            border-color: $text-and-border-gray-color;
         }
 
         
@@ -71,15 +72,15 @@
 
     /* Описание */
     .modal__description {
-        color:#7E7E82;
+        color:$text-hover-color-gray;
         font-family: 'TT Lakes Medium';
-        font-size: 14px;
+        font-size: $font-size-small;
         line-height: 16px;
     }
 
     /* Ссылки в описании */
     .modal__link {
-        color:#FF3E79;
+        color:$text-modal-link-color;
     }
 
     /* Кнопка отправить */

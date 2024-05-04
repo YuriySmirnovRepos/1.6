@@ -1,3 +1,5 @@
+@use '../utils/vars.scss' as *;
+
 /* Секция 'Цены на услуги' */
 .services {
     .section__container {
@@ -5,12 +7,12 @@
     }
 
     .services__disclaimer {
-        font-size: 14px;
+        font-size: $font-size-small;
         margin-top: 20px;
         margin-bottom: 16px;
         max-width: 421px;
     }
-    
+
     .services__link {
         font-family: 'TT Lakes Medium';
         display: inline-block;

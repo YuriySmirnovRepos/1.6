@@ -1,9 +1,9 @@
-
+@use '../utils/vars.scss' as *;
 /* Подвал */
 .footer {
-    font-size: 14px;
+    font-size: $font-size-small;
     border-top: 1px solid #D9FFF5;
-    color:#7E7E82;
+    color:$text-hover-color-gray;
     display: flex;
     flex-direction: column;
     padding-top: 16px;
@@ -22,7 +22,7 @@
         text-align: center;
     }
 
-    @media screen and (min-width:500px) {
+    @media screen and (min-width:calc($breakpoint-tablet - 268px)) {
         & {
             flex-direction: row;
             padding: 32px 24px 25px 24px;
