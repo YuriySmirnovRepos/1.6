@@ -10,7 +10,7 @@
     }
 
 
-    @media screen and (min-width:calc($breakpoint-mobile - 168px)) {
+    @media screen and (min-width:$breakpoint-swiper-off) {
         .section__container {
             min-height: 288px;
         }

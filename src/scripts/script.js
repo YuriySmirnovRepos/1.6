@@ -61,17 +61,40 @@ function toggleModal () {
     const mainWrapper = document.querySelector('.main-wrapper');
     const page = document.querySelector('.page');
 
-    return (evt, element) => {
-        evt.preventDefault();
+/**
+ * Toggles the scrollbar width compensation.
+ *
+ * @param {boolean} isCallModalFromAsideMenu - Indicates whether the modal is called from the aside menu.
+ * @return {void} This function does not return anything.
+ */
+    function toggleScrollbarWidthCompensation(isCallModalFromAsideMenu) {
+        if (isCallModalFromAsideMenu) return;
 
-        const isClickFromModalAsideMenu = evt.target.closest('.aside-menu.show') !== null;
+        const scrollbarWidth = window.innerWidth - page.clientWidth;
+        if (scrollbarWidth > 0) {
+            page.style.paddingRight = scrollbarWidth + 'px';
+        }
+        else{
+            page.style.paddingRight = "0";
+        }        
+    }
+
+    return (evt, element) => {
+        evt.preventDefault();        
 
         element.classList.toggle('show');
 
+        let isCallModalFromModalMenu = asideMenuWrapper.obj.classList.contains('show') && 
+        (evt.target.closest('.action-button--call') || evt.target.closest('.action-button--chat'));
+        toggleScrollbarWidthCompensation(isCallModalFromModalMenu);
+
+        const isClickFromModalAsideMenu = evt.target.closest('.aside-menu.show') !== null;
+
         if (isClickFromModalAsideMenu){
+        
             if(evt.target.closest('.action-button--close')){
                 mainWrapper.classList.toggle('transparent');
-                page.classList.toggle('scroll-disabled');    
+                page.classList.toggle('scroll-disabled');
             }
             else {
                 asideMenuWrapper.obj.classList.toggle('show');
@@ -106,6 +129,23 @@ window.onclick = (event) => {
     }
 }
 
+document.addEventListener('keydown', closeModalsOnEscape);
+/**
+ * Closes all modal windows on the page when the escape key is pressed.
+ * @param {KeyboardEvent} event - The keyboard event that triggered the function.
+ * @listens document#keydown
+ * @fires toggleModalCaller
+ */
+function closeModalsOnEscape(event) {
+    if (event.key === "Escape") {
+        const modals = document.querySelectorAll('.modal.show, .aside-menu.show');
+        modals.forEach(modal => {
+            toggleModalCaller(event, modal);
+        });
+    }
+}
+
+
 [headerWrapper.btns.burger, asideMenuWrapper.btns.close].forEach(
     el => el.onclick = (evt) => toggleModalCaller(evt, asideMenuWrapper.obj)
 );
@@ -117,8 +157,6 @@ window.onclick = (event) => {
 [headerWrapper.btns.chat, asideMenuWrapper.btns.chat, modalFeedbackWrappper.btns.close].forEach(
     el => el.onclick = (evt) => toggleModalCaller(evt, modalFeedbackWrappper.obj)
 )
-
-
 //#endregion
 
 //#region Read more button
